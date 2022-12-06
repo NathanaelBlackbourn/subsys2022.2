@@ -1,0 +1,83 @@
+@media screen and (max-width: 768px) {       /* Tablet: 481px-768px */
+    
+    /* Sidomeny */
+
+    .sidebar-icon {
+        margin-bottom: 70px;
+        overflow: visible;
+        transition: color 0.2s ease, background-color 0.2s ease
+    }
+
+    .sidebar-icon:hover {
+        width: 50px;
+        color: white;
+        background-color: #0000cd;
+    }
+
+    span.sidebar-material {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .menu-span {
+        display: inline-block;
+        top: 55px;
+        left: 50%;
+        width: 60px;
+        text-align: center;
+        transform: translateX(-50%);
+        margin-left: 0;
+        opacity: 1;
+        text-align: center;
+        transition: none;
+    }
+
+    aside {
+        top: 10px;
+
+    }
+
+    .main-container {
+        padding-top: 50px;
+    }
+
+    main {
+        margin-left: 100px;
+        margin-right: 30px;
+        width: auto;
+        gap: .5em;
+    }
+
+    .item-1 {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        padding: 15px 80px;
+        align-items: center;
+        font-size: 5rem;
+    }
+
+    .peace-logo {
+        width: 75px;
+        height: 75px;
+    }
+
+    #select {
+        padding: 20px 15px;
+    }
+
+    .clickbuttonone, .clickbuttontwo, .clickbuttonthree, .clickbuttonfour, .clickbuttonfive, .clickbuttonsix {
+        padding: 15px;
+        }
+
+    .listone, .listtwo, .listthree, .listfour, .listfive, .listsix {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #footer-container {
+        margin-left: 100px;
+        margin-right: 30px;
+    }
+
+}

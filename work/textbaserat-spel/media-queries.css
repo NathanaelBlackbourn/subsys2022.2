@@ -1,0 +1,32 @@
+@media all and (max-width: 800px) {
+    #title-container {
+        top: 5vh;
+    }
+
+    #game-container {
+        top: 10vh;
+        transform: translateX(-50%);
+        height: 88vh;
+        margin-bottom: 2vh;
+        width: 90%;
+        gap: 1rem;
+    }
+
+    #text-body {
+        overflow: scroll;
+    }
+
+    #text-container {
+        overflow: hidden;
+    }
+
+    #team-container {
+        position: static;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .team-icon {
+        padding-top: calc(50px - 0.7rem)
+    }
+}

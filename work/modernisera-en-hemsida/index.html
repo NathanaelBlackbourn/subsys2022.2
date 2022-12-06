@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-files/front-page/front-page.css">
+    <link rel="stylesheet" href="css-files/front-page/front-page-tablet.css">
+    <link rel="stylesheet" href="css-files/front-page/front-page-mobil.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/> <!-- Iconset -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>    
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Craigslist 2.0</title>
+</head>
+
+<body>
+
+    <!-- Språk menu -->
+
+    <header>
+        <select class="sprak" name="språk">
+            <option value="svenska">Svenska</option>
+            <option value="english">English</option>
+            <option value="español">Español</option>
+        </select>
+    </header>
+
+    <!-- Sidomeny -->
+
+    <aside>
+        <div id="konto" class="icon sidebar-icon">
+            <span class="material-symbols-outlined sidebar-material">person</span>
+            <span class="menu-span">Mitt<br>konto</span>
+        </div>
+        <div id="annons" class="icon sidebar-icon">
+            <span class="material-symbols-outlined sidebar-material">publish</span>
+            <span class="menu-span">Lägg ut<br>annons</span>
+        </div>
+        <div id="kalender" class="icon sidebar-icon">
+            <span class="material-symbols-outlined sidebar-material">calendar_month</span>
+            <span class="menu-span">Kalender</span>
+        </div>
+    </aside>
+
+    <!-- Main content/kategorier -->
+
+    <div class="main-container">
+        <main>
+        
+            <div class="item-1"><img src="Bilder/Peace_sign.svg" class="peace-logo">craigslist</div>
+            
+            <div class="item-2">
+
+            <div class="search-bar">
+                <div id="select">
+                    <p id="selectText"><i class="fa-solid fa-location-dot"></i> Välj plats</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                    <ul id="list">
+                        <li class="options">Sverige</li>
+                        <li class="options">Danmark</li>
+                        <li class="options">Norge</li>
+                        <li class="options">England</li>
+                        <li class="options">Spanien</li>
+                        <li class="options">USA</li>
+                    </ul>
+                </div>     
+            <input type="text" id="inputfield" placeholder="Sök överallt">
+            </div>
+    </div>
+            
+            <!-- Category Items-->
+            
+            <div class="dropdown-container">
+                <button class="clickbuttonone">Jobb</button>
+                <div class="listone">
+                    <ul>
+                        <li class="categories">administration</lI>
+                        <li class="categories">arkitekt</li>
+                        <li class="categories">bioteknik</li>
+                        <li class="categories">fastigheter</li>
+                        <li class="categories">företag/ledning</li>
+                        <li class="categories">företag/ledning</li>
+                        <li class="categories">försäljning</li>
+                        <li class="categories">hantverksyrken</li>
+                        <li class="categories">ideell sektor</li>
+                        <li class="categories">juridik</li>
+                    </ul>
+                    <ul>
+                        <li class="categories">försäljning</li>
+                        <li class="categories">hantverksyrken</li>
+                        <li class="categories">ideell sektor</li>
+                        <li class="categories">juridik</li>
+                        <li class="categories">konst / media</li>
+                        <li class="categories">kundtjänst</li>
+                        <li class="categories">marknadsföring</li>
+                        <li class="categories">mjukvara</li>
+                        <li class="categories">personal</li>
+                        <li class="categories">resturang</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown-container">
+                <button class="clickbuttontwo">Bostad*</button>
+                <div class="listtwo">
+                    <ul>
+                        <li class="categories">andrahand</li>
+                        <li class="categories"><a href="annons-list.html" style="text-decoration:none">bostad önskas*</a></li>
+                        <li class="categories">fastighet till salu</li>
+                        <li class="categories">husbyte</li>
+                        <li class="categories">kontor</li>
+                    </ul>
+                    <ul>
+                        <li class="categories">lägenheter/bostad</li>
+                        <li class="categories">parkering</li>
+                        <li class="categories">rum/delade</li>
+                        <li class="categories">rum önskade</li>
+                        <li class="categories">semesteruthyrning</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown-container">
+                <button class="clickbuttonthree">Till Salu</button>
+                <div class="listthree">
+                    <ul>
+                        <li class="categories">allmänt</li>
+                        <li class="categories">antikviteter</li>
+                        <li class="categories">apparater</li>
+                        <li class="categories">baby+barn</li>
+                        <li class="categories">bilar+truckar</li>
+                        <li class="categories">bildelar</li>
+                        <li class="categories">biljetter</li>
+                        <li class="categories">byteshandel</li>
+                        <li class="categories">båtdelar</li>
+                        <li class="categories">böcker</li>
+                    </ul>
+                    <ul>
+                        <li class="categories">cd/dvd/vhs</li>
+                        <li class="categories">cykeldelar</li>
+                        <li class="categories">cyklar</li>
+                        <li class="categories">datordelar</li>
+                        <li class="categories">datorer</li>
+                        <li class="categories">elektronik</li>
+                        <li class="categories">flyg</li>
+                        <li class="categories">foto+video</li>
+                        <li class="categories">företag</li>
+                        <li class="categories">trädgård</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="dropdown-container">
+                <button class="clickbuttonfour">Tjänster</button>
+                <div class="listfour">
+                    <ul>
+                        <li class="categories">arbetskraft</li>
+                        <li class="categories">bilar</li>
+                        <li class="categories">cykel</li>
+                        <li class="categories">dator</li>
+                        <li class="categories">evenemang</li>
+                        <li class="categories">fastighet</li>
+                        <li class="categories">finansiella</li>
+                        <li class="categories">gård+trädgård</li>
+                        <li class="categories">health/well</li>
+                        <li class="categories">husdjur</li>
+                    </ul>
+                    <ul>
+                        <li class="categories">hushåll</li>
+                        <li class="categories">juridiskt</li>
+                        <li class="categories">kreativt</li>
+                        <li class="categories">lektioner</li>
+                        <li class="categories">marin</li>
+                        <li class="categories">mobiltelefon</li>
+                        <li class="categories">resa/semester</li>
+                        <li class="categories">skriv</li>
+                        <li class="categories">skönhet</li>
+                        <li class="categories">yrkesarbeten</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="dropdown-container">
+                <button class="clickbuttonfive">Samhälle</button>
+                <div class="listfive">
+                    <ul>
+                        <li class="categories">aktiviteter</li>
+                        <li class="categories">allmänt</li>
+                        <li class="categories">barnpassning</li>
+                        <li class="categories">evenemang</li>
+                        <li class="categories">frivilliga</li>
+                        <li class="categories">förlorat+hittat</li>
+                        <li class="categories">grupper</li>
+                        <li class="categories">husdjur</li>
+                        <li class="categories">konstnärer</li>
+                        <li class="categories">kurser</li>
+                        <li class="categories">utbildning</li>
+                    </ul>
+                    <ul>
+                        <li class="categories">lokalt</li>
+                        <li class="categories">missade kontakter</li>
+                        <li class="categories">musiker</li>
+                        <li class="categories">politik</li>
+                        <li class="categories">samkning</li>
+                        <li class="categories">berömma</li>
+                        <li class="categories">flyg</li>
+                        <li class="categories">foto+video</li>
+                        <li class="categories">företag</li>
+                        <li class="categories">trädgård</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dropdown-container">
+                <button class="clickbuttonsix">Diskussionsforum</button>
+                <div class="listsix">
+                    <ul>
+                        <li class="categories">apple</li>
+                        <li class="categories">ateist</li>
+                        <li class="categories">bilar</li>
+                        <li class="categories">bild</li>
+                        <li class="categories">bostad</li>
+                        <li class="categories">bröllop</li>
+                        <li class="categories">cyklar</li>
+                        <li class="categories">diet</li>
+                        <li class="categories">döende</li>
+                        <li class="categories">eko</li>
+                    </ul>
+                    <ul>
+                        <li class="categories">feedback</li>
+                        <li class="categories">film</li>
+                        <li class="categories">filosofi</li>
+                        <li class="categories">fixa det</li>
+                        <li class="categories">förälder</li>
+                        <li class="categories">Haiku</li>
+                        <li class="categories">historia</li>
+                        <li class="categories">foto+video</li>
+                        <li class="categories">företag</li>
+                        <li class="categories">trädgård</li>
+                    </ul>
+                </div>
+            </div>
+
+    </main>
+</div>
+
+<!-- Footer -->
+
+<footer>
+        <div id="footer-container">
+            <div id="fc1" class="footer-col">
+                <ul>
+                    <li><a>craigslist open source</a></li>
+                    <li><a>craigslist-blogg</a></li>
+                    <li><a>bäst-på-craigslist</a></li>
+                    <li><a>"craigslist joe"</a></li>
+                    <li><a>craig newmark philanthropies</a></li>
+                    <li><a>craigslist app</a></li>
+                    <li><a>cl is hiring</a></li>
+                    <li><a>om craigslist</a></li>
+                </ul>
+            </div>
+            <div id="fc2" class="footer-col">
+                <ul>
+                    <li>©2022 craigslist</li>
+                    <li><a>hjälp</a></li>
+                    <li><a>säkerhet</a></li>
+                    <li><a>integritet</a></li>
+                    <li><a>undvik bedrägerier</a></li>
+                    <li><a>systemstatus</a></li>
+                    <li><a>feedback</a></li>
+                    <li><a>villkor</a></li>
+                    <li><a>sitemap</a></li>
+                </ul>
+            </div>
+        </div> 
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>

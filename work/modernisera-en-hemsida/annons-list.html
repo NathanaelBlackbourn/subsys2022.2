@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css-files/front-page/front-page.css">
+    <link rel="stylesheet" href="css-files/front-page/front-page-tablet.css">
+    <link rel="stylesheet" href="css-files/front-page/front-page-mobil.css">
+    <link rel="stylesheet" href="css-files/annons-list/annons-list.css">
+    <link rel="stylesheet" href="css-files/annons-list/annons-list-tablet.css">
+    <link rel="stylesheet" href="css-files/annons-list/annons-list-mobil.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/> <!-- Iconset -->
+    <title>Annons-list</title>
+</head>
+
+<body>
+
+    <!-- Språk meny -->
+
+    <header>
+        <select class="sprak" name="språk">
+            <option value="svenska">Svenska</option>
+            <option value="english">English</option>
+            <option value="español">Español</option>
+        </select>
+    </header>
+
+    <!-- Sidomeny  -->
+
+    <aside>
+        <div id="konto" class="icon sidebar-icon">
+            <span class="material-symbols-outlined  sidebar-material">person</span>
+            <span class="menu-span">Mitt<br>konto</span>
+        </div>
+        <div id="annons" class="icon sidebar-icon">
+            <span class="material-symbols-outlined  sidebar-material">publish</span>
+            <span class="menu-span">Lägg ut<br>annons</span>
+        </div>
+        <div id="kalender" class="icon sidebar-icon">
+            <span class="material-symbols-outlined  sidebar-material">calendar_month</span>
+            <span class="menu-span">Kalender</span>
+        </div>
+    </aside>
+
+
+    <div class="main-container">
+        <main class="annons-main">
+            <div class="annons-header">
+                <p class="head-p"><a href="index.html">craigslist*</a>  >  <a>sverige</a>  >  <a>bostad</a>  >  <a>bostad önskas</a></p>
+            </div>
+            <div class="search-block">
+                <div class="search-bar list-search">
+                    <input type="text" placeholder="sök inom bostad önskas">
+                    <span class="material-symbols-outlined search-icon">search</span>
+                </div>
+
+                <!-- Sök bar ikoner -->
+
+                <div class="icon-block">
+                    <div id="open-filter" class="icon annons-icon interact-grey">
+                        <span class="material-symbols-outlined">tune</span>
+                    </div>
+                    <div class="icon annons-icon interact-grey">
+                        <span class="material-symbols-outlined">sort</span>
+                    </div>
+                    <div class="icon annons-icon interact-grey">
+                        <span class="material-symbols-outlined">list</span>
+                    </div>
+                    <div class="icon annons-icon interact-grey">
+                        <span class="material-symbols-outlined">save</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Annonser  -->
+
+            <div class="list-block">
+
+                <!-- Döljde formulär -->
+
+                <div id="filter-settings" class="hidden">
+                    <div id="close-filter" class="icon annons-icon interact-blue">
+                        <span class="material-symbols-outlined">close</span>
+                    </div><form>
+                        <fieldset>
+                            <legend>filtrera</legend>
+                            <div class="form-block">
+                                <div class="dropdown">
+                                    <h3 class="form-header">annons<br>preferenser</h3>
+                                    <div class="icon dropdown-icon interact-blue">
+                                        <span id="typ-button" class="material-symbols-outlined">expand_more</span>
+                                    </div>
+                                    <div id="preferenser-list" class="dropdown-list hidden">
+                                        <input type="checkbox" id="sok-endast" class="form-checkbox" name="sök endast rubriker">
+                                        <label for="sok">sök endast rubriker</label><br>
+                                        <input type="checkbox" id="har-bild" class="form-checkbox" name="har bild">
+                                        <label for="har-bild">har bild</label><br>
+                                        <input type="checkbox" id="upplagd" class="form-checkbox" name="upplagd idag">
+                                        <label for="upplagd">upplagd idag</label><br>
+                                        <input type="checkbox" id="bunta-ihop" class="form-checkbox" name="bunta ihop dubletter">
+                                        <label for="buna-ihop">bunta ihop dubletter</label><br>
+                                        <input type="checkbox" id="ta-med" class="form-checkbox" name="ta med grannområden">
+                                        <label for="ta-med">ta med grannområden</label><br>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <h3 class="form-header">krav</h3>
+                                    <div class="icon dropdown-icon interact-blue">
+                                        <span id="typ-button" class="material-symbols-outlined">expand_more</span>
+                                    </div>
+                                    <div id="krav-list" class="dropdown-list hidden">
+                                        <input type="checkbox" id="katter" class="form-checkbox" name="katter ok">
+                                        <label for="katter">katter ok</label><br>
+                                        <input type="checkbox" id="hundar" class="form-checkbox" name="hundar ok">
+                                        <label for="hundar">hundar ok</label><br>
+                                        <input type="checkbox" id="moblerad" class="form-checkbox" name="möblerad">
+                                        <label for="moblerad">möberlad</label><br>
+                                        <input type="checkbox" id="rokfri" class="form-checkbox" name="rökfri">
+                                        <label for="rokfri">rökfri</label><br>
+                                        <input type="checkbox" id="wheelchair" class="form-checkbox" name="wheelchair access">
+                                        <label for="wheelchair">wheelchair access</label><br>
+                                        <input type="checkbox" id="luft" class="form-checkbox" name="luftkonditionering">
+                                        <label for="luft">luftkonditionering</label><br>
+                                        <input type="checkbox" id="ev-ladd" class="form-checkbox" name="EV-laddning">
+                                        <label for="ev-ladd">EV-laddning</label>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <h3 class="form-header">bostadstyp</h3>
+                                    <div class="icon dropdown-icon interact-blue">
+                                        <span id="typ-button" class="material-symbols-outlined">expand_more</span>
+                                    </div>
+                                    <div id="typ-list" class="dopdown-list hidden">
+                                        <input type="checkbox" id="lagenhet" class="form-checkbox" name="lägenhet">
+                                        <label for="lagenhet">lägenhet</label><br>
+                                        <input type="checkbox" id="andels" class="form-checkbox" name="andelslägenhet">
+                                        <label for="andels">andelslägenhet</label><br>
+                                        <input type="checkbox" id="stuga" class="form-checkbox" name="stuga">
+                                        <label for="stuga">stuga</label><br>
+                                        <input type="checkbox" id="parhus" class="form-checkbox" name="parhus">
+                                        <label for="parhus">parhus</label><br>
+                                        <input type="checkbox" id="vaning" class="form-checkbox" name="våning">
+                                        <label for="vaning">våning</label><br>
+                                        <input type="checkbox" id="hus" class="form-checkbox" name="hus">
+                                        <label for="hus">hus</label><br>
+                                        <input type="checkbox" id="juridiskt" class="form-checkbox" name="juridiskt">
+                                        <label for="juridiskt">juridiskt</label><br>
+                                        <input type="checkbox" id="loft" class="form-checkbox" name="loft">
+                                        <label for="loft">loft</label><br>
+                                        <input type="checkbox" id="radhus" class="form-checkbox" name="radhus">
+                                        <label for="radhus">radhus</label><br>
+                                        <input type="checkbox" id="tillverkad" class="form-checkbox" name="tillverkad">
+                                        <label for="tillverkad">tillverkad</label><br>
+                                        <input type="checkbox" id="stod" class="form-checkbox" name="stödboende">
+                                        <label for="stod">stödboende</label><br>
+                                        <input type="checkbox" id="mark" class="form-checkbox" name="mark">
+                                        <label for="mark">mark</label><br>
+                                        <a>markera allt</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <h3 class="form-header">tvätt</h3>
+                                    <div class="icon dropdown-icon interact-blue">
+                                        <span id="tvatt-button" class="material-symbols-outlined">expand_more</span>
+                                    </div>
+                                    <div id="tvatt-list" class="dopdown-list hidden">
+                                        <input type="checkbox" id="enheten" class="form-checkbox" name="tvättmaskin/torktumlare i enheten">
+                                        <label for="enheten">tvättmaskin/torktumlare i enheten</label><br>
+                                        <input type="checkbox" id="anslut" class="form-checkbox" name="anslutningar för tvättmaskin/torktumlare">
+                                        <label for="anslut">anslutningar för tvättmaskin/torktumlare</label><br>
+                                        <input type="checkbox" id="byggnaden" class="form-checkbox" name="tvättinrättning i byggnaden">
+                                        <label for="byggnaden">tvättinrättning i byggnaden</label><br>
+                                        <input type="checkbox" id="omradet" class="form-checkbox" name="tvättinrättning på området">
+                                        <label for="omradet">tvättinrättning på området</label><br>
+                                        <input type="checkbox" id="ingen-t" class="form-checkbox" name="ingen tvättinredning">
+                                        <label for="ingen-t">ingen tvättinredning</label><br>
+                                        <a>markera allt</a>
+                                    </div>
+                                </div>
+                                <div class="dropdown">
+                                    <h3 class="form-header">parkering</h3>
+                                    <div class="icon dropdown-icon interact-blue">
+                                        <span id="parkering-button" class="material-symbols-outlined">expand_more</span>
+                                    </div>
+                                    <div id="parkering-list" class="dopdown-list hidden">
+                                        <input type="checkbox" id="carport" class="form-checkbox" name="carport">
+                                        <label for="carport">carport</label><br>
+                                        <input type="checkbox" id="anslutet-g" class="form-checkbox" name="anslutet garage">
+                                        <label for="anslutet-g">anslutet garage</label><br>
+                                        <input type="checkbox" id="sep-g" class="form-checkbox" name="separat garage">
+                                        <label for="sep-g">separat garage</label><br>
+                                        <input type="checkbox" id="p-plats" class="form-checkbox" name="parkering plats">
+                                        <label for="p-plats">parkering plats</label><br>
+                                        <input type="checkbox" id="gatu" class="form-checkbox" name="gatuparkering">
+                                        <label for="gatu">gatuparkering</label><br>
+                                        <input type="checkbox" id="bemannad" class="form-checkbox" name="bemannad parkering">
+                                        <label for="bemannad">bemannad parkering</label><br>
+                                        <input type="checkbox" id="ingen-p" class="form-checkbox" name="ingen parkering">
+                                        <label for="ingen-p">ingen parkering</label><br>
+                                        <a>markera allt</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-block">
+                                <h3 class="form-header">sovrum</h3>
+                                <select id="min-sovrum" name="min-sovrum" class="form-select">
+                                    <option disabled selected>min</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <hr class="form-hr">
+                                <select id="max-sovrum" name="max-sovrum" class="form-select">
+                                    <option disabled selected>max</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                </select>
+                                <br>
+                                <br>
+                                <br>
+                                <h3 class="form-header">badrum</h3>
+                                <select id="min-badrum" name="min-badrum" class="form-select">
+                                    <option disabled selected>min</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                                <hr class="form-hr">
+                                <select id="max-badrum" name="max-badrum" class="form-select">
+                                    <option disabled selected>max</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                </select>
+                            </div>
+                            <div class="form-block">
+                                <h3 class="form-header">m<sup>2</sup></h3>
+                                <input class="form-text" type="text" size="4" placeholder="min">
+                                <hr class="form-hr">
+                                <input class="form-text" type="text" size="4" placeholder="max">
+                                <br>
+                                <br>
+                                <br>
+                                <h3 class="form-header">tillgänglighet</h3>
+                                <select id="tillg" name="tillg" class="form-select">
+                                    <option>alla datum</option>
+                                    <option>inom 30 dagar</option>
+                                    <option>mer än 30 dagar</option>
+                                </select>
+                            </div>
+                        </fieldset>
+                        <div class="form-footer">
+                            <button class="form-button interact-blue">återst.</button>
+                            <button class="form-button interact-blue">uppd. sökning</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Lista objekt -->
+
+                <div class="list-item">
+                    <img class="list-img" src="Bilder\stockholm.png">
+                    <div class="details">
+                        <div class="upper">
+                        <span>enrumslägenhet sökes!</span>
+                        <span class="date">5 sep</span>
+                        <div class="icon annons-icon list-icon"><span class="material-symbols-outlined annons-save">save</span></div>
+                        <p>(Stockholm)</p>
+                    </div>
+                </div>
+            </div>
+
+                <div class="list-item">
+                    <img class="list-img" src="Bilder\goteborg.png">
+                    <div class="details">
+                        <div class="upper">
+                        <span>Looking for flat to rent</span>
+                        <span class="date">5 sep</span>
+                        <div class="icon annons-icon list-icon"><span class="material-symbols-outlined annons-save">save</span></div>
+                        <p>(Göteborgs stad)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <img class="list-img" src="Bilder\goteborg2.png">
+                    <div class="details">
+                        <div class="upper">
+                        <span>boende sökes akut!</span>
+                        <span class="date">3 sep</span>
+                        <div class="icon annons-icon list-icon"><span class="material-symbols-outlined annons-save">save</span></div>
+                        <p>(Göteborg)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <img class="list-img" src="Bilder\jonkoping.webp">
+                    <div class="details">
+                        <div class="upper">
+                        <span>önskar hyra lägenhet omgående</span>
+                        <span class="date">3 sep</span>
+                        <div class="icon annons-icon list-icon"><span class="material-symbols-outlined annons-save">save</span></div>
+                        <p>(Jönköping)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="list-item">
+                    <img class="list-img" src="Bilder\stockholm2.png">
+                    <div class="details">
+                        <div class="upper">
+                        <span>Loooking for an apartment 2 rooms</span>
+                        <span class="date">2 sep</span>
+                        <div class="icon annons-icon list-icon"><span class="material-symbols-outlined annons-save">save</span></div>
+                        <p>(Stockholms stad)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Lista footer -->
+
+            <div class="list-footer">
+                <div class="li-ft-col">
+                    <a>bostäder på rättvisa villkor</a>
+                </div>
+                <div class="li-ft-col">
+                    <a>undvik scam</a>
+                </div>
+            </div>
+        </main>
+
+
+        <!-- Lista nav -->
+
+        <div class="list-nav">
+            <div class="icon annons-icon left interact-grey">
+                <span class="material-symbols-outlined">expand_more</span>
+            </div>
+            <p>1/1</p>
+            <div class="icon annons-icon top interact-grey">
+                <span class="material-symbols-outlined">expand_more</span>
+            </div>
+            <div class="icon annons-icon right interact-grey">
+                <span class="material-symbols-outlined">expand_more</span>
+            </div>
+        </div>
+
+    </div>
+
+        <!-- Footer -->
+
+    <footer>
+        <div id="footer-container">
+            <div id="fc1" class="footer-col">
+                <ul>
+                    <li><a>craigslist open source</a></li>
+                    <li><a>craigslist-blogg</a></li>
+                    <li><a>bäst-på-craigslist</a></li>
+                    <li><a>"craigslist joe"</a></li>
+                    <li><a>craig newmark philanthropies</a></li>
+                    <li><a>craigslist app</a></li>
+                    <li><a>cl is hiring</a></li>
+                    <li><a>om craigslist</a></li>
+                </ul>
+            </div>
+            <div id="fc2" class="footer-col">
+                <ul>
+                    <li>©2022 craigslist</li>
+                    <li><a>hjälp</a></li>
+                    <li><a>säkerhet</a></li>
+                    <li><a>integritet</a></li>
+                    <li><a>undvik bedrägerier</a></li>
+                    <li><a>systemstatus</a></li>
+                    <li><a>feedback</a></li>
+                    <li><a>villkor</a></li>
+                    <li><a>sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="annons-script.js"></script>
+</body>
+</html>

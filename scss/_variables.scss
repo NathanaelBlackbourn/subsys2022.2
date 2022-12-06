@@ -1,0 +1,22 @@
+// Colors
+
+$colors: (
+    'blue': #e3fffe,
+    'black': #38322d,
+);
+
+// Fonts
+
+@import url("https://use.typekit.net/khp0gjo.css");
+
+$fonts: (
+    'main-font': 'pennypacker', 'Helvetica', sans-serif,
+    'header-font': 'pennypacker-semiwide', 'Helvetica', sans-serif,
+);
+
+// Nav structure
+
+$column-structure: (
+    'padding': 1rem,
+    'margin-bottom': 1rem,
+);
