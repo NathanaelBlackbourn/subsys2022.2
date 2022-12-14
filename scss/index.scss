@@ -1,5 +1,11 @@
-// Functions and variables
+// Variables
 @import 'variables';
 
 // User agent styles reset
 @import 'base';
+@import 'reusable';
+@import 'nav';
+
+// Media queries
+@import 'mdm';
+@import 'lrg';
