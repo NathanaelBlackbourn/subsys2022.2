@@ -1,0 +1,11 @@
+@media (min-width: $medium) {
+
+    .project-block {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .project-part {
+        width: $horizontal-project-part;
+    }
+}

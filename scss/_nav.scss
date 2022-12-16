@@ -1,7 +1,42 @@
 .nav-container {
+    flex-direction: column;
     margin: $margin $neg-margin;
+    width: $container-width;
 }
 
 .nav-column {
     padding: 0 $padding;
+}
+
+.project-block {
+    flex-direction: column;
+    margin-bottom: 4 * $margin;
+}
+
+.image-container {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: 50%;
+    margin-bottom: $margin;
+}
+
+.project-date {
+    margin-right: $margin;
+}
+
+.project-title {
+    font-family: $header-font;
+}
+
+#project-pic-1 {
+    background-image: url(/images/crater-screenshot.png)
+}
+
+#project-pic-2 {
+    background-image: url(/images/craigslist-screenshot.png)
+}
+
+#project-pic-3 {
+    background-image: url(/images/museum-screenshot.png)
 }

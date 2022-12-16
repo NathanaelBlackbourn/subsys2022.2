@@ -8,13 +8,27 @@ $black: #38322d;
 
 @import url("https://use.typekit.net/khp0gjo.css");
 
-$main-font: 'pennypacker', 'Helvetica', sans-serif;
+$main-font: 'pennypacker-light', 'Helvetica', sans-serif;
 $header-font: 'pennypacker-semiwide', 'Helvetica', sans-serif;
+
+$body-weight: 300;
+$body-size: 15px;
+$body-height: 1.5rem;
+$body-spacing: 0.8px;
 
 
 // Nav structure
 
-
 $padding: 1rem;
 $margin: 1rem;
 $neg-margin: -1rem;
+
+$container-width: calc(100% - (2 * $padding));
+
+$horizontal-project-part: calc(50% - 1rem);
+
+
+// Responsivity
+
+$medium: 640px;
+$large: 1024px;

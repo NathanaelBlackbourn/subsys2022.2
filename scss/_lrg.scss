@@ -1,3 +1,14 @@
-.nav-column {
-    width: 33%;
+@media (min-width: $large) {
+
+    .nav-container {
+        flex-direction: row;
+    }
+
+    .nav-column {
+        width: 33%;
+    }
+
+    #projects {
+        width: 66%;
+    }
 }

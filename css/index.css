@@ -3,7 +3,11 @@ html {
   box-sizing: border-box;
   padding: 0;
   color: #38322d;
-  font-family: "pennypacker", "Helvetica", sans-serif;
+  font-family: "pennypacker-light", "Helvetica", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.5rem;
+  letter-spacing: 0.8px;
 }
 
 body {
@@ -14,7 +18,7 @@ body {
 header {
   position: absolute;
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
   background: #e3fffe;
 }
 
@@ -37,18 +41,75 @@ iframe {
   width: 100%;
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
 .flex {
   display: flex;
 }
 
 .nav-container {
+  flex-direction: column;
   margin: 1rem -1rem;
+  width: calc(100% - 2rem);
 }
 
 .nav-column {
   padding: 0 1rem;
 }
 
-.nav-column {
-  width: 33%;
+.project-block {
+  flex-direction: column;
+  margin-bottom: 4rem;
+}
+
+.image-container {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-size: cover;
+  background-position: 50%;
+  margin-bottom: 1rem;
+}
+
+.project-date {
+  margin-right: 1rem;
+}
+
+.project-title {
+  font-family: "pennypacker-semiwide", "Helvetica", sans-serif;
+}
+
+#project-pic-1 {
+  background-image: url(/images/crater-screenshot.png);
+}
+
+#project-pic-2 {
+  background-image: url(/images/craigslist-screenshot.png);
+}
+
+#project-pic-3 {
+  background-image: url(/images/museum-screenshot.png);
+}
+
+@media (min-width: 640px) {
+  .project-block {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .project-part {
+    width: calc(50% - 1rem);
+  }
+}
+@media (min-width: 1024px) {
+  .nav-container {
+    flex-direction: row;
+  }
+  .nav-column {
+    width: 33%;
+  }
+  #projects {
+    width: 66%;
+  }
 }/*# sourceMappingURL=index.css.map */

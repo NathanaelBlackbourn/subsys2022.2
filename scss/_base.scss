@@ -3,6 +3,10 @@ html {
     padding: 0;
     color: $black;
     font-family: $main-font;
+    font-weight: $body-weight;
+    font-size: $body-size;
+    line-height: $body-height;
+    letter-spacing: $body-spacing;
 }
 
 body {
@@ -13,7 +17,7 @@ body {
 header {
     position: absolute;
     width: 100%;
-    padding: 0 $padding;
+    padding: 0 (2 * $padding);
     background: $blue;
 }
 
@@ -34,4 +38,9 @@ iframe {
     border: none;
     height: 100vh;
     width: 100%;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
