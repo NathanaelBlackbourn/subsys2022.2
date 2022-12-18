@@ -1,0 +1,22 @@
+{
+  "name": "2.0",
+  "version": "1.0.0",
+  "description": "After being unsatisfied with the product of a school assignment to create a website to serve as a digital CV I am redoing the project. It is based on the same structure as the school work with improvements to the functionality and aesthetics. I have also taken the opportunity to explore SASS in my own time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NathanaelBlackbourn/subsys2022.2.git"
+  },
+  "author": "Nathanael Blackbourn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NathanaelBlackbourn/subsys2022.2/issues"
+  },
+  "homepage": "https://github.com/NathanaelBlackbourn/subsys2022.2#readme",
+  "dependencies": {
+    "typescript": "^4.9.4"
+  }
+}
