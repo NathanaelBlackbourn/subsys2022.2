@@ -9,24 +9,28 @@
 }
 
 .project-block {
+    @include project-block;
+}
+
+@mixin project-block {
     flex-direction: column;
     margin-bottom: 4 * $margin;
-}
+    
+    .image-container {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-size: cover;
+        background-position: 50%;
+        margin-bottom: $margin;
+    }
 
-.image-container {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    background-size: cover;
-    background-position: 50%;
-    margin-bottom: $margin;
-}
+    .project-date {
+        margin-right: $margin;
+    }
 
-.project-date {
-    margin-right: $margin;
-}
-
-.project-title {
-    font-family: $header-font;
+    .project-title {
+        font-family: $header-font;
+    }
 }
 
 #project-pic-1 {

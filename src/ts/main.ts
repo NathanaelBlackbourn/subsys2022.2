@@ -11,7 +11,7 @@ function addMenuListeners() {
     }
 }
 
-function openSection(event) { // Ask David event type
-    const targetSection: HTMLElement | null = document.getElementById(event.target.dataset.opens);
+function openSection(event: Event) { // Ask David event type
+    const targetSection: HTMLElement | null = document.getElementById(event.target?.dataset.opens);
     targetSection?.classList.toggle('hidden');
 }
