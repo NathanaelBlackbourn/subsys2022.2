@@ -6,14 +6,15 @@ function init() {
 }
 
 interface site {
-    body: HTMLBodyElement | null;
+    body: HTMLElement | null;
     init(): void;
 }
 
 class Site implements site {
-    body: HTMLBodyElement | null = document.querySelector('body');
+    body: HTMLElement | null = document.querySelector('body');
     init() {
-        nav.init(this.body);
+        const header = new NavElement('header', this.body, [], '');
+        header.render();
     }
 }
 
