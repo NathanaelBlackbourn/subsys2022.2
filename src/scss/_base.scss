@@ -17,7 +17,7 @@ body {
 header {
     position: absolute;
     width: 100%;
-    padding: 0 (2 * $padding);
+    padding: 0 (3 * $padding);
     background: $blue;
 }
 
@@ -32,6 +32,7 @@ button {
     color: $black;
     font-family: $header-font;
     background: transparent;
+    cursor: pointer;
 }
 
 iframe {

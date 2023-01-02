@@ -1,3 +1,5 @@
+// Nav structure
+
 .nav-container {
     flex-direction: column;
     margin: $margin $neg-margin;
@@ -8,15 +10,15 @@
     padding: 0 $padding;
 }
 
-.project-block {
-    @include project-block;
-}
+
+// Projects layout
 
 @mixin project-block {
     flex-direction: column;
     margin-bottom: 4 * $margin;
     
     .image-container {
+        position: relative;
         width: 100%;
         aspect-ratio: 16 / 9;
         background-size: cover;
@@ -31,6 +33,10 @@
     .project-title {
         font-family: $header-font;
     }
+}
+
+.project-block {
+    @include project-block;
 }
 
 #project-pic-1 {
