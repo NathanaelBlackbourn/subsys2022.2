@@ -20,13 +20,14 @@ class Site implements site {
 abstract class DOMElement {
     node: HTMLElement;
     parent: HTMLElement | null;
-    constructor (type: string, parent: HTMLElement | null, classNames: string[], id: string) {
+    constructor (type: string, parent: HTMLElement | null, classList: string[], id: string) {
         this.node = document.createElement(type);
         this.parent = parent;
-        for (const name of classNames) {
+        for (const name of classList) {
             this.node.classList.add(name)
         }
         this.node.id = id;
+        this.render();
         this.init();
     };
     abstract init(): void;

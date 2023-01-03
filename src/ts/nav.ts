@@ -1,76 +1,62 @@
 class Header extends DOMElement{
     init() {
-        this.render();
         this.children();
     }
     children() {
-        const navCon = new navContainer('div', this.node, ['nav-container'], '');
+        new NavContainer('div', this.node, ['nav-container', 'flex'], '');
     }
     toggle() {
         
     }
 }
 
-class navContainer extends DOMElement {
+class NavContainer extends DOMElement {
     init() {
-        this.render();
         this.children();
     }
     children() {
-        
+        new MenuColumn ('div', this.node, ['nav-column'], 'menu-column');
     }
 }
 
-class Button {
+class MenuColumn extends DOMElement {
+    init() {
+        this.children();
+    };
+    children() {
+        new Button (this.node, [], 'projects-button', 'PROJECTS', 'Projects');
+        new Button (this.node, [], 'about-button', 'ABOUT ME', 'About');
+    }; 
+}
+
+class Projects extends DOMElement {
+    init() {
+        this.children();
+    };
+    children() {
+        // Add project blocks here
+        console.log('Rendering project blocks.');
+    };
+}
+
+class Button extends DOMElement {
     text: string;
-    target: HTMLElement;
-    constructor(text: string, target: HTMLElement) {
+    target: string;
+    constructor(parent: HTMLElement, classList: string[], id: string, text: string, target: string) {
+        super('button', parent, classList, id),
         this.text = text,
         this.target = target
+        this.node.innerText = this.text;
+        console.log(this.target);
+        this.node.addEventListener('click', () => {
+            this.listener(target)
+        });
     }
     init() {
-        // Add listener, fill with text
     }
-    listener() {
-
+    listener(target: string) {
+        console.log(target);
+        const constructor = window[target];
+        new constructor('div', document.getElementById('nav-container'), ['nav-column'], this.target.toLowerCase());
     }
 }
-
-// class Header {
-//     DOMElement: HTMLElement = document.createElement('header');
-//     init(body: HTMLBodyElement | null) {
-//         body?.appendChild(this.DOMElement);
-//         this.renderContainer();
-//     };
-//     renderContainer() {
-//         const navCon = new NavDiv(['nav-container'], 'main-nav');
-//         navCon.render(this.DOMElement);
-//     }
-// }
-
-// class NavDiv {
-//     classNames: string[];
-//     id: string;
-//     constructor (classNames: string[], id: string) {
-//         this.classNames = classNames;
-//         this.id = id;
-//     }
-//     render(parent: HTMLElement) {
-//         const divA: HTMLDivElement =  document.createElement('div');
-//         for (const name of this.classNames) {
-//             divA.classList.add(name);
-//         }
-//         divA.id = this.id;
-//     }
-    // render(parent: HTMLDivElement) {
-    //     parent.append(navCol);
-    // }
-    // create(classNames: string[], id: string) {
-    //     const navCol: HTMLDivElement = document.createElement('div');
-    //     for (const name of classNames) {
-    //         navCol.classList.add(name);
-    //     }
-    //     navCol.id = id;
-    //     return navCol;
-    // }
-// }
