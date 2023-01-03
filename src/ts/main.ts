@@ -13,8 +13,25 @@ interface site {
 class Site implements site {
     body: HTMLElement | null = document.querySelector('body');
     init() {
-        const header = new NavElement('header', this.body, [], '');
-        header.render();
+        const header = new Header ('header', this.body, [], '');
+    }
+}
+
+abstract class DOMElement {
+    node: HTMLElement;
+    parent: HTMLElement | null;
+    constructor (type: string, parent: HTMLElement | null, classNames: string[], id: string) {
+        this.node = document.createElement(type);
+        this.parent = parent;
+        for (const name of classNames) {
+            this.node.classList.add(name)
+        }
+        this.node.id = id;
+        this.init();
+    };
+    abstract init(): void;
+    render() {
+        this.parent?.append(this.node);
     }
 }
 

@@ -1,3 +1,26 @@
+class Header extends DOMElement{
+    init() {
+        this.render();
+        this.children();
+    }
+    children() {
+        const navCon = new navContainer('div', this.node, ['nav-container'], '');
+    }
+    toggle() {
+        
+    }
+}
+
+class navContainer extends DOMElement {
+    init() {
+        this.render();
+        this.children();
+    }
+    children() {
+        
+    }
+}
+
 class Button {
     text: string;
     target: HTMLElement;
@@ -5,21 +28,11 @@ class Button {
         this.text = text,
         this.target = target
     }
-}
+    init() {
+        // Add listener, fill with text
+    }
+    listener() {
 
-class NavElement {
-    node: HTMLElement;
-    parent: HTMLElement | null;
-    constructor (type: string, parent: HTMLElement | null, classNames: string[], id: string) {
-        this.node = document.createElement(type);
-        this.parent = parent;
-        for (const name of classNames) {
-            this.node.classList.add(name)
-        }
-        this.node.id = id;
-    };
-    render() {
-        this.parent?.append(this.node);
     }
 }
 
