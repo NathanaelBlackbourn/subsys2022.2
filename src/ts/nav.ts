@@ -54,7 +54,7 @@ const navStructure = {
                     item.remove();
                 }
             };
-            const constructor = navStructure[this.target];
+            const constructor = navStructure[this.target]; // Question
             new constructor(document.getElementById('main-container'), this.target);
         }
     },

@@ -1,7 +1,7 @@
 class ProjectBlock extends DOMElement {
     projNum: number;
     blockName: string;
-    content: object | void = {};
+    content: any; // Workaround. Question.
     constructor(i: number) {
         i += 1
         super('div', document.getElementById('projects'), ['project-block', 'flex'], ('project-' + i));
@@ -17,7 +17,6 @@ class ProjectBlock extends DOMElement {
     async getContent(i: number){
         return await fetch('../work/' + i + '/project-info.json')
         .then((response) => response.json())
-        // .then((data) => console.log(data));
     }
     children() {
         new ProjectChild('div', this.node, ['project-part-1'], this.blockName + '-part-1', false);
