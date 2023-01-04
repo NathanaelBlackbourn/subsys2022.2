@@ -36,8 +36,9 @@ const navStructure = {
             this.children();
         };
         children() {
-            // Add project blocks here
-            console.log('Rendering project blocks.');
+            for (let i = 0; i < 2; i++) {
+                new ProjectBlock(i);
+            }
         };
     },  
 
