@@ -1,20 +1,23 @@
 class ProjectBlock extends DOMElement {
     projNum: number;
     blockName: string;
-    content: object = {};
+    content: object | void = {};
     constructor(i: number) {
         i += 1
         super('div', document.getElementById('projects'), ['project-block', 'flex'], ('project-' + i));
         this.projNum = i;
         this.blockName = 'project-' + i;
-        this.content = this.getContent(i);
-        this.children();
-        this.listener();
+        this.init(i);
     }
-    async getContent(i: number) {
-        return fetch('../work/' + i + '/project-info.json')
+    async init(i: number) {
+        this.content = await this.getContent(i);
+        this.children();
+        this.listener();  
+    }
+    async getContent(i: number){
+        return await fetch('../work/' + i + '/project-info.json')
         .then((response) => response.json())
-        .then((data) => console.log(data));
+        // .then((data) => console.log(data));
     }
     children() {
         new ProjectChild('div', this.node, ['project-part-1'], this.blockName + '-part-1', false);
