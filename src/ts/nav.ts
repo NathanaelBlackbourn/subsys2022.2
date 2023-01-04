@@ -55,17 +55,17 @@ const navStructure = {
                 }
             };
             const constructor = navStructure[this.target];
-            new constructor(document.getElementById('nav-container'), this.target);
+            new constructor(document.getElementById('main-container'), this.target);
         }
     },
     
     projects: class projectColumn extends DOMElement {
-        constructor(parent: HTMLElement, id: string) {
+        constructor(parent: HTMLElement | null, id: string) {
             super('div', parent, ['nav-column', 'content-column'], id)
             this.children();
         };
         children() {
-            for (let i = 0; i < 2; i++) {
+            for (let i = 0; i < 3; i++) {
                 new ProjectBlock(i);
             }
         };

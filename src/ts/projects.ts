@@ -3,9 +3,10 @@ class ProjectBlock extends DOMElement {
     blockName: string;
     content: object = {};
     constructor(i: number) {
+        i += 1
         super('div', document.getElementById('projects'), ['project-block', 'flex'], ('project-' + i));
         this.projNum = i;
-        this.blockName = 'project-' + (i + 1);
+        this.blockName = 'project-' + i;
         this.content = this.getContent(i);
         this.children();
         this.listener();
