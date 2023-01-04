@@ -26,12 +26,12 @@ const navStructure = {
             this.children();
         };
         children() {
-            new navStructure.button (this.node, [], 'projects-button', 'PROJECTS', 'projCol');
-            new navStructure.button (this.node, [], 'about-button', 'ABOUT ME', 'aboutCol');
+            new navStructure.button (this.node, [], 'projects-button', 'PROJECTS', 'projects');
+            new navStructure.button (this.node, [], 'about-button', 'ABOUT ME', 'about');
         }; 
     },
 
-    projCol: class projectColumn extends DOMElement {
+    projects: class projectColumn extends DOMElement {
         init() {
             this.children();
         };
@@ -39,7 +39,18 @@ const navStructure = {
             // Add project blocks here
             console.log('Rendering project blocks.');
         };
+    },  
+
+    about: class aboutColumn extends DOMElement {
+        init() {
+            this.children();
+        };
+        children() {
+            // Add CV blocks here
+            console.log('Rendering about blocks.');
+        };
     },
+
 
     button: class Button extends DOMElement {
         text: string;
@@ -56,8 +67,14 @@ const navStructure = {
         init() {
         }
         listener() {
+            const contentColumns: HTMLCollection = document.getElementsByClassName('cotent-column');
+            for (const item of contentColumns) {
+                if (item.id !== this.target) {
+                    item.remove();
+                }
+            };
             const constructor = navStructure[this.target];
-            new constructor('div', document.getElementById('nav-container'), ['nav-column'], this.target.toLowerCase());
+            new constructor('div', document.getElementById('nav-container'), ['nav-column', 'content-column'], this.target);
         }
     },
 
