@@ -11,13 +11,13 @@ interface site {
 }
 
 class Site implements site {
-    body: HTMLElement | null = document.querySelector('body');
+    body: HTMLBodyElement | null = document.querySelector('body');
     init() {
-        new navStructure.header ('header', this.body, [], '');
+        new navStructure.header (this.body);
     }
 }
 
-abstract class DOMElement {
+class DOMElement {
     node: HTMLElement;
     parent: HTMLElement | null;
     constructor (type: string, parent: HTMLElement | null, classList: string[], id: string) {
@@ -28,9 +28,7 @@ abstract class DOMElement {
         }
         this.node.id = id;
         this.render();
-        this.init();
     };
-    abstract init(): void;
     render() {
         this.parent?.append(this.node);
     }

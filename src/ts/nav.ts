@@ -1,11 +1,12 @@
 const navStructure = {
 
     header: class Header extends DOMElement{
-        init() {
+        constructor(parent: HTMLBodyElement | null) {
+            super('header', parent, [], '');
             this.children();
         }
         children() {
-            new navStructure.navCon ('div', this.node, ['nav-container', 'flex'], '');
+            new navStructure.navCon (this.node);
         }
         toggle() {
             
@@ -13,43 +14,24 @@ const navStructure = {
     },
 
     navCon: class NavContainer extends DOMElement {
-        init() {
+        constructor(parent: HTMLElement) {
+            super('div', parent, ['nav-container', 'flex'], 'main-container')
             this.children();
         }
         children() {
-            new navStructure.menCol ('div', this.node, ['nav-column'], 'menu-column');
+            new navStructure.menCol (this.node);
         }
     },
 
     menCol: class MenuColumn extends DOMElement {
-        init() {
+        constructor(parent: HTMLElement) {
+            super('div', parent, ['nav-column'], 'menu-column');
             this.children();
-        };
+        }
         children() {
             new navStructure.button (this.node, [], 'projects-button', 'PROJECTS', 'projects');
             new navStructure.button (this.node, [], 'about-button', 'ABOUT ME', 'about');
         }; 
-    },
-
-    projects: class projectColumn extends DOMElement {
-        init() {
-            this.children();
-        };
-        children() {
-            for (let i = 0; i < 2; i++) {
-                new ProjectBlock(i);
-            }
-        };
-    },  
-
-    about: class aboutColumn extends DOMElement {
-        init() {
-            this.children();
-        };
-        children() {
-            // Add CV blocks here
-            console.log('Rendering about blocks.');
-        };
     },
 
 
@@ -65,8 +47,6 @@ const navStructure = {
                 this.listener()
             });
         }
-        init() {
-        }
         listener() {
             const contentColumns: HTMLCollection = document.getElementsByClassName('cotent-column');
             for (const item of contentColumns) {
@@ -75,8 +55,30 @@ const navStructure = {
                 }
             };
             const constructor = navStructure[this.target];
-            new constructor('div', document.getElementById('nav-container'), ['nav-column', 'content-column'], this.target);
+            new constructor(document.getElementById('nav-container'), this.target);
         }
     },
+    
+    projects: class projectColumn extends DOMElement {
+        constructor(parent: HTMLElement, id: string) {
+            super('div', parent, ['nav-column', 'content-column'], id)
+            this.children();
+        };
+        children() {
+            for (let i = 0; i < 2; i++) {
+                new ProjectBlock(i);
+            }
+        };
+    },  
 
+    about: class aboutColumn extends DOMElement {
+        constructor(parent: HTMLElement, id: string) {
+            super('div', parent, ['nav-column', 'cotent-column'], id);
+            this.children();
+        }
+        children() {
+            // Add CV blocks here
+            console.log('Rendering about blocks.');
+        };
+    }
 }
