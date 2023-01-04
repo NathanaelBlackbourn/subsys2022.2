@@ -1,19 +1,13 @@
-addEventListener('DOMContentLoaded', init)
+addEventListener('DOMContentLoaded', () => {
+    new Frame();
+})
 
-function init() {
-    const subSys: site = new Site();
-    subSys.init();
-}
-
-interface site {
-    body: HTMLElement | null;
-    init(): void;
-}
-
-class Site implements site {
-    body: HTMLBodyElement | null = document.querySelector('body');
-    init() {
+class Frame {
+    body: HTMLBodyElement | null;
+    constructor() {
+        this.body = document.querySelector('body');
         new navStructure.header (this.body);
+        new DOMElement ('iframe', this.body, [], '');
     }
 }
 
