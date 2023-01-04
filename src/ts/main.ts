@@ -13,7 +13,7 @@ interface site {
 class Site implements site {
     body: HTMLElement | null = document.querySelector('body');
     init() {
-        const header = new Header ('header', this.body, [], '');
+        const header = new navStructure.header ('header', this.body, [], '');
     }
 }
 
