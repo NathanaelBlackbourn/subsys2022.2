@@ -2,7 +2,7 @@ addEventListener('DOMContentLoaded', () => {
     const frame = new Frame();
 })
 
-interface frame {
+interface Frame {
     body: HTMLBodyElement | null;
     children: object[];
 }
@@ -14,17 +14,18 @@ interface DOMElement {
 }
 
 
-class Frame implements frame{
-    body: HTMLBodyElement | null;
+class Frame {
     constructor() {
         this.body = document.querySelector('body');
-        this.header = new navStructure.header (this.body);
-        this.iframe = new DOMElement ('iframe', this.body, [], '');
+        this.pushChildren();
+    }
+    pushChildren() {
+        this.children.push(new navStructure.header (this.body), new DOMElement ('iframe', this.body, [], ''));
     }
 }
 
 // Element construction
-class DOMElement implements DOMElement{
+class DOMElement{
     constructor (type: string, parent: HTMLElement | null, classList: string[], id: string) {
         this.node = document.createElement(type);
         this.parent = parent;
