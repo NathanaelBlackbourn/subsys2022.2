@@ -15,7 +15,6 @@
 
 @mixin project-block {
     flex-direction: column;
-    margin-bottom: 4 * $margin;
     
     .image-container {
         position: relative;
@@ -24,6 +23,10 @@
         background-size: cover;
         background-position: 50%;
         margin-bottom: $margin;
+    }
+
+    .project-head {
+        margin-bottom: 0.5 * $margin;
     }
 
     .project-date {

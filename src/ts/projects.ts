@@ -19,10 +19,12 @@ class ProjectBlock extends DOMElement {
         .then((response) => response.json())
     }
     children() {
-        new ProjectChild('div', this.node, ['project-part-1'], this.blockName + '-part-1', false);
-        new ProjectChild('div', this.node, ['project-part-1'], this.blockName + '-part-2', false);
-        new ProjectChild('span', document.getElementById(this.blockName + '-part-1'), ['project-date'], this.blockName + '-date', this.content.date);
-        new ProjectChild('span', document.getElementById(this.blockName + '-part-1'), ['project-title'], this.blockName + '-title', this.content.title);
+        new ProjectChild('div', this.node, ['project-part'], this.blockName + '-part-1', false);
+        new ProjectChild('div', this.node, ['project-part'], this.blockName + '-part-2', false);
+        new ProjectChild('div', document.getElementById(this.blockName + '-part-1'), ['project-head', 'flex', 'space-between'], this.blockName + '-head', false);
+        new ProjectChild('span', document.getElementById(this.blockName + '-head'), ['project-date'], this.blockName + '-date', this.content.date);
+        new ProjectChild('span', document.getElementById(this.blockName + '-head'), ['project-title'], this.blockName + '-title', this.content.title);
+        new ProjectChild('span', document.getElementById(this.blockName + '-head'), ['see-project'], this.blockName + '-see', 'see project');
         new ProjectChild('div', document.getElementById(this.blockName + '-part-1'), ['image-container'], this.blockName + '-image', false);
         new ProjectChild('p', document.getElementById(this.blockName + '-part-1'), ['project-description'], this.blockName + '-description', this.content.description);
     };

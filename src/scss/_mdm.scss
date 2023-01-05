@@ -1,7 +1,14 @@
 @media (min-width: $medium) {
 
-    .project-block {
+    .project-block:nth-child(odd) {
         flex-direction: row;
+    }
+
+    .project-block:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+
+    .project-block {
         justify-content: space-between;
     }
 
