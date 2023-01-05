@@ -2,25 +2,36 @@ addEventListener('DOMContentLoaded', () => {
     const frame = new Frame();
 })
 
+interface children {
+    [key: string]: DOMElement;
+}
+
 interface Frame {
     body: HTMLBodyElement | null;
-    children: object[];
+    children: children;
 }
 
 interface DOMElement {
     node: HTMLElement;
     parent: HTMLElement | null;
-    children: object[];
+    children: children;
+    head?: DOMElement;
+    date?: DOMElement;
+    title?: DOMElement;
+    seeProject?: DOMElement;
+    imageContainer?: DOMElement;
+    description?: DOMElement;
 }
 
 
 class Frame {
     constructor() {
         this.body = document.querySelector('body');
-        this.pushChildren();
+        this.addChildren();
     }
-    pushChildren() {
-        this.children.push(new navStructure.header (this.body), new DOMElement ('iframe', this.body, [], ''));
+    addChildren() {
+        this.children.header = new Header (this.body)
+        this.children.iframe = new DOMElement ('iframe', this.body, [], '');
     }
 }
 
