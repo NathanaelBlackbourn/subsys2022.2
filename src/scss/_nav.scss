@@ -13,7 +13,7 @@
 
 // Projects layout
 
-@mixin project-block {
+.project-block { 
     flex-direction: column;
     
     .image-container {
@@ -36,10 +36,16 @@
     .project-title {
         font-family: $header-font;
     }
-}
 
-.project-block {
-    @include project-block;
+    &:hover {
+
+        cursor: pointer;
+
+        & .see-project{
+            text-decoration: underline 1px dotted $black;
+            text-underline-offset: 2px;
+        }
+    }
 }
 
 #project-1-image {

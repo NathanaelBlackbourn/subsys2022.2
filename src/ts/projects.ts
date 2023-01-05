@@ -4,21 +4,21 @@ class ProjectBlock extends DOMElement {
     content: any; // Workaround. Question.
     constructor(i: number) {
         i += 1
-        super('div', document.getElementById('projects'), ['project-block', 'flex'], ('project-' + i));
+        super('div', document.getElementById('projects'), ['project-block', 'alternate', 'flex'], ('project-' + i));
         this.projNum = i;
         this.blockName = 'project-' + i;
         this.init(i);
     }
     async init(i: number) {
         this.content = await this.getContent(i);
-        this.children();
-        this.listener();  
+        this.pushChildren();
+        this.listener(i);  
     }
     async getContent(i: number){
         return await fetch('../work/' + i + '/project-info.json')
         .then((response) => response.json())
     }
-    children() {
+    pushChildren() {
         new ProjectChild('div', this.node, ['project-part'], this.blockName + '-part-1', false);
         new ProjectChild('div', this.node, ['project-part'], this.blockName + '-part-2', false);
         new ProjectChild('div', document.getElementById(this.blockName + '-part-1'), ['project-head', 'flex', 'space-between'], this.blockName + '-head', false);
@@ -28,8 +28,13 @@ class ProjectBlock extends DOMElement {
         new ProjectChild('div', document.getElementById(this.blockName + '-part-1'), ['image-container'], this.blockName + '-image', false);
         new ProjectChild('p', document.getElementById(this.blockName + '-part-1'), ['project-description'], this.blockName + '-description', this.content.description);
     };
-    listener() {
-        // On click change link in iframe
+    listener(i: number) {
+        this.node.addEventListener('click', () => {
+            const iframe = document.querySelector('iframe');
+            if (iframe) {
+                iframe.src = '../work/' + i + '/index.html';
+            }
+        })
     }
 }
 

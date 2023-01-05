@@ -10,3 +10,7 @@
 .hidden {
     display: none;
 }
+
+.collapsed {
+    transform: translateY(-100%);
+}

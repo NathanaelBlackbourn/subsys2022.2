@@ -1,19 +1,30 @@
 addEventListener('DOMContentLoaded', () => {
-    new Frame();
+    const frame = new Frame();
 })
 
-class Frame {
+interface frame {
+    body: HTMLBodyElement | null;
+    children: object[];
+}
+
+interface DOMElement {
+    node: HTMLElement;
+    parent: HTMLElement | null;
+    children: object[];
+}
+
+
+class Frame implements frame{
     body: HTMLBodyElement | null;
     constructor() {
         this.body = document.querySelector('body');
-        new navStructure.header (this.body);
-        new DOMElement ('iframe', this.body, [], '');
+        this.header = new navStructure.header (this.body);
+        this.iframe = new DOMElement ('iframe', this.body, [], '');
     }
 }
 
-class DOMElement {
-    node: HTMLElement;
-    parent: HTMLElement | null;
+// Element construction
+class DOMElement implements DOMElement{
     constructor (type: string, parent: HTMLElement | null, classList: string[], id: string) {
         this.node = document.createElement(type);
         this.parent = parent;
@@ -26,22 +37,8 @@ class DOMElement {
     render() {
         this.parent?.append(this.node);
     }
+    removeMe() {
+        // Remove object from parent
+        this.node.remove();
+    }
 }
-
-
-
-// function main() {
-//     addMenuListeners();
-// }
-
-// function addMenuListeners() {
-//     const menuButtons: HTMLCollection = document.getElementsByClassName('main-nav-button');
-//     for (const button of menuButtons) {
-//         button.addEventListener('click', openSection);
-//     }
-// }
-
-// function openSection(event: Event) { // Ask David event type
-//     const targetSection: HTMLElement | null = document.getElementById(event.target?.dataset.opens);
-//     targetSection?.classList.toggle('hidden');
-// }

@@ -1,10 +1,10 @@
 @media (min-width: $medium) {
 
-    .project-block:nth-child(odd) {
+    .alternate:nth-child(odd) {
         flex-direction: row;
     }
 
-    .project-block:nth-child(even) {
+    .alternate:nth-child(even) {
         flex-direction: row-reverse;
     }
 
