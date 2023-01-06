@@ -60,14 +60,18 @@ class Nav extends DOMElement{
       content!: object;
       constructor() {
         super("div", mainframe.elements.nav.node, ["nav-column", "content-column"], "about");
-        this.renderContent();
-        this.getContent();
+        this.init();
       };
+      async init() {
+        await this.getContent();
+        console.log(this.content);
+        this.appendChildren();
+      }
       async getContent() {
-
+        this.content = await fetch('../cv/content.json')
+        .then((response) => response.json());
       };
-      renderContent() {
-        console.log("About is rendering");
+      appendChildren() {
       }
     },
     headerFooter: class headerFooter extends DOMElement {
