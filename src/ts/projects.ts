@@ -95,7 +95,8 @@ class ProjectBlock extends DOMElement {
       if (iframe) {
         iframe.src = "../work/" + i + "/index.html";
       }
-    });
+    })
+    mainframe.children.nav.toggle();
   }
 }
 

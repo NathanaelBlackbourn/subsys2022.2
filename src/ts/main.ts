@@ -1,20 +1,21 @@
 addEventListener('DOMContentLoaded', () => {
-    const frame = new Frame();
+    mainframe.init();
 })
 
-interface children {
+interface content {
     [key: string]: DOMElement;
 }
 
 interface Frame {
     body: HTMLBodyElement | null;
-    children: children;
+    elements: content;
+    init(): void;
 }
 
 interface DOMElement {
     node: HTMLElement;
     parent: HTMLElement | null;
-    children: children;
+    children: content;
     head?: DOMElement;
     date?: DOMElement;
     title?: DOMElement;
@@ -23,20 +24,21 @@ interface DOMElement {
     description?: DOMElement;
 }
 
-
-class Frame {
-    constructor() {
+const mainframe: Frame = {
+    body: null,
+    elements: {},
+    init() {
         this.body = document.querySelector('body');
-        this.addChildren();
-    }
-    addChildren() {
-        this.children.header = new Header (this.body)
-        this.children.iframe = new DOMElement ('iframe', this.body, [], '');
+        this.elements.nav = new Nav (this.body);
+        this.elements.iframe = new DOMElement ('iframe', this.body, [], '');
     }
 }
 
+
 // Element construction
+
 class DOMElement{
+    children = {};
     constructor (type: string, parent: HTMLElement | null, classList: string[], id: string) {
         this.node = document.createElement(type);
         this.parent = parent;
@@ -54,3 +56,17 @@ class DOMElement{
         this.node.remove();
     }
 }
+
+class Button extends DOMElement {
+    text: string;
+    constructor(
+      parent: HTMLElement,
+      classList: string[],
+      id: string,
+      text: string,
+    ) {
+      super("button", parent, classList, id),
+        this.text = text;
+      this.node.innerText = this.text;
+    }
+  }
