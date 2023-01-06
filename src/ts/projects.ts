@@ -9,7 +9,6 @@ class ProjectBlock extends DOMElement {
   blockName: string;
   content: projectInfo; // Question. How can I deal with this error? I assign the content here in the init function.Init is called from the constructor because the constructor cannot be async.
   constructor(i: number) {
-    i += 1;
     super(
       "div",
       document.getElementById("projects"),
@@ -95,8 +94,8 @@ class ProjectBlock extends DOMElement {
       if (iframe) {
         iframe.src = "../work/" + i + "/index.html";
       }
+      mainframe.toggleHeader();
     })
-    mainframe.children.nav.toggle();
   }
 }
 

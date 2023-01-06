@@ -20,13 +20,17 @@ class Nav extends DOMElement{
           this.node,
           [],
           "projects-button",
-          "PROJECTS"
+          "PROJECTS",
+          this.buttonListener,
+          'projects'
         );
         this.children.aboutButton = new Button(
           this.node,
           [],
           "about-button",
-          "ABOUT"
+          "ABOUT",
+          this.buttonListener,
+          'about'
         );
       }
       buttonListener(target: string){
@@ -42,8 +46,8 @@ class Nav extends DOMElement{
       }
     },
     projects: class Projects extends DOMElement {
-      constructor(parent: HTMLDivElement) {
-        super("div", parent, ["nav-column"], "projects");
+      constructor() {
+        super("div", mainframe.elements.nav.children.navContainer.node, ["nav-column", "content-column"], "projects"); // Annoying selector
         this.renderContent();
       }
       renderContent() {
@@ -53,8 +57,8 @@ class Nav extends DOMElement{
       }
     },
     about: class About extends DOMElement {
-      constructor(parent: HTMLDivElement) {
-        super("div", parent, ["nav-column"], "about");
+      constructor() {
+        super("div", mainframe.elements.nav.node, ["nav-column", "content-column"], "about");
         this.renderContent();
       }
       renderContent() {
@@ -84,9 +88,6 @@ class Nav extends DOMElement{
     this.children.headerFooter = new this.templates.headerFooter()
   };
   listeners() {
-  };
-  toggle() {
-    this.node.classList.toggle('collapsed');
   };
 }
 
