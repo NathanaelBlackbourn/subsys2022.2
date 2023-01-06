@@ -23,6 +23,7 @@ class ProjectBlock extends DOMElement {
   async init(i: number) {
     this.content = await this.getContent(i);
     this.addChildren();
+    this.getImage(i);
     this.listener(i);
   }
   async getContent(i: number) {
@@ -89,6 +90,9 @@ class ProjectBlock extends DOMElement {
     );
     console.log(this.children);
   }
+  getImage(i: number) {
+    this.children.part1.imageContainer.node.style.backgroundImage = "url(../work/" + i + "/thumbnail.png)";
+  }
   listener(i: number) {
     this.node.addEventListener("click", () => {
       const iframe = document.querySelector("iframe");
@@ -96,7 +100,7 @@ class ProjectBlock extends DOMElement {
         iframe.src = "../work/" + i + "/index.html";
       }
       mainframe.toggleHeader();
-    })
+    });
   }
 }
 

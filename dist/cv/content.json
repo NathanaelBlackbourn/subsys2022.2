@@ -1,0 +1,92 @@
+{
+    "lang": "eng",
+    "name": "NATHANAEL BACKBOURN",
+    "title": "FRONTEND DEVELOPER",
+    "sliderText": "BASED IN GOTHENBURG, SWEDEN",
+    "languagesSection": {
+        "title": "LANGUAGES",
+        "content": [{
+            "language": "English",
+            "level": "native"
+        }, {
+            "language": "Swedish",
+            "level": "fluent"
+        }, {
+            "language": "Spanish",
+            "level": "fluent"
+        }]
+    },
+    "skillsSection": {
+        "title": "SKILLS",
+        "content": [{
+            "skill": "HTML",
+            "level": 80
+        }, {
+            "skill": "CSS",
+            "level": 80
+        }, {
+            "skill": "SASS",
+            "level": 40
+        }, {
+            "skill": "JavaScript",
+            "level": 60
+        }, {
+            "skill": "TypeScript",
+            "level": 40
+        }, {
+            "skill": "Adobe Creative Suite",
+            "level": 50
+        }, {
+            "skill": "Figma",
+            "level": 40
+        }]
+    },
+    "educationSection": {
+        "title": "EDUCATION",
+        "content": [{
+            "school": "Medieinstitutet",
+            "course": "Front End Developer",
+            "startMonth": "09",
+            "startYear": "2022",
+            "endMonth": "05",
+            "endYear": "2024",
+            "decsription": "An in-depth vocational course designed to turn us into fully competent front end developers."
+        }, {
+            "school": "Falmouth University",
+            "course": "Graphic design BA Hons",
+            "startMonth": "09",
+            "startYear": "2011",
+            "endMonth": "07",
+            "endYear": "2014",
+            "decsription": "A degree highly focused on design process and conceptual thinking. At Falmouth I learned about typography, layout, printing techniques, web design, experience design, project management and much more. The pinnacle of my studies was collaborating on the design and production of all visual material for the final year fashion show in 2014."
+        }]
+    },
+    "eexperienceSection": {
+        "title": "EXPERIENCE",
+        "content": [{
+            "business": "Stigbergets Shangri-La",
+            "roll": "Shift Manager",
+            "startMonth": "06",
+            "startYear": "2022",
+            "endMonth": "",
+            "endYear": "now",
+            "decsription": "As a shift manager I am responsible for the restaurant in the absence of the manager. I need to be able to handle problems that arise, manage time and manage people. Customers and staff alike. Working for Stigbergets I have the opportunity to learn a lot about craft beer and I make the most of it. I work part time now."
+        }, {
+            "business": "Uniqlo",
+            "roll": "Visual Merchandiser",
+            "startMonth": "03",
+            "startYear": "2021",
+            "endMonth": "05",
+            "endYear": "2022",
+            "decsription": "As a visual merchandiser at Uniqlo I was responsible for how the shop looks. This consisted mostly of styling mannequins, making weekly plans for the layout of the store and rolling out the brand’s visual campaigns. The Gothenburg department is a team of three and we were each responsible for managing our time and seeing through our daily tasks."
+        }, {
+            "business": "Bitter Cocktail Bar",
+            "roll": "Shift Manager",
+            "startMonth": "09",
+            "startYear": "2016",
+            "endMonth": "08",
+            "endYear": "2020",
+            "decsription": "Bitter is a modern classical cocktail bar in the central neighbourhood Sant Antoni of Barcelona. I made a lot of drinks here and I ran the place alone Sunday to Tuesday."
+        }]
+    }
+}

@@ -34,8 +34,7 @@ const mainframe: Frame = {
     this.elements.iframe = new DOMElement("iframe", this.body, [], "");
   },
   toggleHeader() {
-    console.log('ToggleHeder has run.')
-    this.elements.nav.node.classList.toggle("collapsed");
+    mainframe.elements.nav.node.classList.toggle("collapsed");
   },
 };
 
