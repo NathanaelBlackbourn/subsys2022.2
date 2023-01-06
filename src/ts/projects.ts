@@ -4,10 +4,11 @@ interface projectInfo {
   description: string;
 }
 
+/** The block of elements which forms each project's card */
 class ProjectBlock extends DOMElement {
   projNum: number;
   blockName: string;
-  content: projectInfo; // Question. How can I deal with this error? I assign the content here in the init function.Init is called from the constructor because the constructor cannot be async.
+  content!: projectInfo;
   constructor(i: number) {
     super(
       "div",
