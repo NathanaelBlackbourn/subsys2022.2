@@ -71,7 +71,10 @@ class Nav extends DOMElement{
         .then((response) => response.json());
       };
       appendChildren() {
-
+        this.children.intro = new AboutIntro(this.node, this.content.introBlock);
+        for (const block in this.content.skillsBlocks) {
+          this.children[block] = new AboutSkillsBlock(this.node, block.title + "-block", this.content.skillsBlocks[block]);
+        }
       }
     },
     headerFooter: class headerFooter extends DOMElement {

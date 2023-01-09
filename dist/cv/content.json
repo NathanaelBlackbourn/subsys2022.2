@@ -11,53 +11,61 @@
   "skillsBlocks": {
     "languagesSection": {
       "title": "LANGUAGES",
-      "content": [
-        {
-          "language": "English",
+      "content": {
+        "row1": {
+        "lang1": {
+          "skill": "English",
           "level": "native"
         },
-        {
-          "language": "Swedish",
+        "lang2": {
+          "skill": "Swedish",
           "level": "fluent"
         },
-        {
-          "language": "Spanish",
+        "lang3": {
+          "skill": "Spanish",
           "level": "fluent"
         }
-      ]
+      }
+        }
     },
     "skillsSection": {
       "title": "SKILLS",
-      "content": [
-        {
+      "content": {
+        "row1": {
+        "skillBlock1": {
           "skill": "HTML",
           "level": 80
         },
-        {
+        "skillBlock2": {
           "skill": "CSS",
           "level": 80
         },
-        {
+        "skillBlock3": {
           "skill": "SASS",
           "level": 40
-        },
-        {
+        }
+      },
+      "row2": {
+        "skillBlock1": {
           "skill": "JavaScript",
           "level": 60
         },
-        {
+        "skillBlock2": {
           "skill": "TypeScript",
           "level": 40
-        },
-        {
+        }
+      },
+      "row3": {
+        "skillBlock1": {
           "skill": "Adobe Creative Suite",
           "level": 50
         },
-        {
+        "skilBlock2": {
           "skill": "Figma",
           "level": 40
         }
-      ]
+      }
+    }
     }
   },
   "experienceBlocks": {

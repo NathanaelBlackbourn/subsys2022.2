@@ -84,7 +84,7 @@ class Button extends DOMElement {
   }
 }
 
-class ContentChild extends DOMElement {
+class ContentElement extends DOMElement {
   constructor(
     type: string,
     parent: HTMLElement | null,

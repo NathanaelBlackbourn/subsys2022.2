@@ -32,56 +32,56 @@ class ProjectBlock extends DOMElement {
     );
   }
   addChildren() {
-    this.children.part1 = new ContentChild(
+    this.children.part1 = new ContentElement(
       "div",
       this.node,
       ["block-part"],
       this.blockName + "-part-1",
       false
     );
-    this.children.part2 = new ContentChild(
+    this.children.part2 = new ContentElement(
       "div",
       this.node,
       ["block-part"],
       this.blockName + "-part-2",
       false
     );
-    this.children.part1.head = new ContentChild(
+    this.children.part1.head = new ContentElement(
       "div",
       document.getElementById(this.blockName + "-part-1"),
       ["project-head", "flex", "space-between"],
       this.blockName + "-head",
       false
     );
-    this.children.part1.head.date = new ContentChild(
+    this.children.part1.head.date = new ContentElement(
       "span",
       document.getElementById(this.blockName + "-head"),
       ["project-date"],
       this.blockName + "-date",
       this.content.date
     );
-    this.children.part1.head.title = new ContentChild(
+    this.children.part1.head.title = new ContentElement(
       "span",
       document.getElementById(this.blockName + "-head"),
       ["project-title"],
       this.blockName + "-title",
       this.content.title
     );
-    this.children.part1.seeProject = new ContentChild(
+    this.children.part1.seeProject = new ContentElement(
       "span",
       document.getElementById(this.blockName + "-head"),
       ["see-project"],
       this.blockName + "-see",
       "see project"
     );
-    this.children.part1.imageContainer = new ContentChild(
+    this.children.part1.imageContainer = new ContentElement(
       "div",
       document.getElementById(this.blockName + "-part-1"),
       ["image-container"],
       this.blockName + "-image",
       false
     );
-    this.children.part1.description = new ContentChild(
+    this.children.part1.description = new ContentElement(
       "p",
       document.getElementById(this.blockName + "-part-1"),
       ["project-description"],
