@@ -32,58 +32,54 @@ class ProjectBlock extends DOMElement {
     );
   }
   addChildren() {
-    this.children.part1 = new ContentElement(
+    this.children.part1 = new DOMElement(
       "div",
       this.node,
       ["block-part"],
-      this.blockName + "-part-1",
-      false
+      this.blockName + "-part-1"
     );
-    this.children.part2 = new ContentElement(
+    this.children.part2 = new DOMElement(
       "div",
       this.node,
       ["block-part"],
-      this.blockName + "-part-2",
-      false
+      this.blockName + "-part-2"
     );
-    this.children.part1.head = new ContentElement(
+    this.children.head = new DOMElement(
       "div",
-      document.getElementById(this.blockName + "-part-1"),
+      this.children.part1.node,
       ["project-head", "flex", "space-between"],
-      this.blockName + "-head",
-      false
+      this.blockName + "-head"
     );
-    this.children.part1.head.date = new ContentElement(
+    this.children.date = new ContentElement(
       "span",
-      document.getElementById(this.blockName + "-head"),
+      this.children.head.node,
       ["project-date"],
       this.blockName + "-date",
       this.content.date
     );
-    this.children.part1.head.title = new ContentElement(
+    this.children.title = new ContentElement(
       "span",
-      document.getElementById(this.blockName + "-head"),
+      this.children.head.node,
       ["project-title"],
       this.blockName + "-title",
       this.content.title
     );
-    this.children.part1.seeProject = new ContentElement(
+    this.children.seeProject = new ContentElement(
       "span",
-      document.getElementById(this.blockName + "-head"),
+      this.children.head.node,
       ["see-project"],
       this.blockName + "-see",
       "see project"
     );
-    this.children.part1.imageContainer = new ContentElement(
+    this.children.imageContainer = new DOMElement(
       "div",
-      document.getElementById(this.blockName + "-part-1"),
+      this.children.part1.node,
       ["image-container"],
-      this.blockName + "-image",
-      false
+      this.blockName + "-image"
     );
-    this.children.part1.description = new ContentElement(
+    this.children.description = new ContentElement(
       "p",
-      document.getElementById(this.blockName + "-part-1"),
+      this.children.part1.node,
       ["project-description"],
       this.blockName + "-description",
       this.content.description
@@ -91,7 +87,7 @@ class ProjectBlock extends DOMElement {
     console.log(this.children);
   }
   getImage(i: number) {
-    this.children.part1.imageContainer.node.style.backgroundImage = "url(../work/" + i + "/thumbnail.png)";
+    this.children.imageContainer.node.style.backgroundImage = "url(../work/" + i + "/thumbnail.png)";
   }
   listener(i: number) {
     this.node.addEventListener("click", () => {

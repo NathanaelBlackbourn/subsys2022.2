@@ -15,7 +15,7 @@ interface Frame {
 
 interface DOMElement {
   node: HTMLElement;
-  parent: HTMLElement| DOMElement | null;
+  parent: HTMLElement | null;
   children: children;
   head?: DOMElement;
   date?: DOMElement;
@@ -44,16 +44,18 @@ class DOMElement {
   children: children = {};
   constructor(
     type: string,
-    parent: HTMLElement | DOMElement | null,
+    parent: HTMLElement | null,
     classList: string[],
-    id: string
+    id: string | null
   ) {
     this.node = document.createElement(type);
     this.parent = parent;
     for (const name of classList) {
       this.node.classList.add(name);
     }
-    this.node.id = id;
+    if (id) {
+      this.node.id = id;
+    };
     this.render();
   }
   render() {
@@ -68,9 +70,9 @@ class DOMElement {
 class Button extends DOMElement {
   text: string;
   constructor(
-    parent: HTMLElement | DOMElement,
+    parent: HTMLElement | DOMElement | null,
     classList: string[],
-    id: string,
+    id: string | null,
     text: string,
     clickListener: any, // Question. This is a function, how can I type it?
     listenerTarget: string | null
@@ -87,10 +89,10 @@ class Button extends DOMElement {
 class ContentElement extends DOMElement {
   constructor(
     type: string,
-    parent: HTMLElement | null,
+    parent: HTMLElement| DOMElement | null,
     classList: string[],
-    id: string,
-    content: any
+    id: string | null,
+    content: string
   ) {
     super(type, parent, classList, id);
     if (content) {
