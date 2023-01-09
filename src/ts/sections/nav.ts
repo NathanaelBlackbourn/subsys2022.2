@@ -34,15 +34,14 @@ class Nav extends DOMElement{
         );
       }
       buttonListener(target: string){
-        const contentColumns: HTMLCollection =
-          document.getElementsByClassName("cotent-column");
-        for (const item of contentColumns) {
-          if (item.id !== target) {
-            item.remove();
-          }
+        // console.log(navContainer); Why doesn't this work? The object is inside navContainer.
+        const targetElement = mainframe.elements.nav.children.navContainer.children[target];
+        if (targetElement) {
+          targetElement.removeMe();
+        } else {
+          const constructor = mainframe.elements.nav.templates[target]; // Question. Why do I get an error here? The code works and is copied from Stack Overflow.
+          mainframe.elements.nav.children.navContainer.children[target] = new constructor();
         }
-        const constructor = mainframe.elements.nav.templates[target]; // Question. Why do I get an error here? The code works and is copied from Stack Overflow.
-        mainframe.elements.nav.children.navContainer.children[target] = new constructor();
       }
     },
     projects: class Projects extends DOMElement {
