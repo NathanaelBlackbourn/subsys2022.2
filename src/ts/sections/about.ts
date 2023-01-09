@@ -5,7 +5,7 @@ interface CVIntroContent {
 }
 
 class AboutBlock extends DOMElement {
-    constructor(parent: HTMLElement, id: string) {
+    constructor(parent: HTMLElement, id: string) { // Question. Can I put appendChildren() here event though it takes an argument of a different type each time?
         super('div', parent, ['cv-block'], id);
 
     }
@@ -23,7 +23,7 @@ class AboutIntro extends AboutBlock {
     }
 }
 
-interface CVExperienceContent {
+interface AboutSkillsContent {
     title: string;
     content: object[];
 }
@@ -34,11 +34,11 @@ interface SkillInfo {
 }
 
 class AboutSkillsBlock extends AboutBlock {
-    constructor(parent: HTMLElement, id: string, content: CVExperienceContent) {
+    constructor(parent: HTMLElement, id: string, content: AboutSkillsContent) {
         super(parent, id);
         this.appendChildren(content);
     }
-    appendChildren(content: CVExperienceContent) {
+    appendChildren(content: AboutSkillsContent) {
         this.children.head = new DOMElement('div', this.node, ['about-head', 'flex', 'space-between'], content.title + '-head');
         this.children.title = new ContentElement('h2', this.children.head.node, ['about-block-title'], content.title + '-title', content.title);
         let i = 1;
@@ -51,6 +51,35 @@ class AboutSkillsBlock extends AboutBlock {
             i++;
         }
 
+    }
+}
+
+interface ExperienceContentBlock {
+    school: string;
+    course: string;
+    startMonth: string;
+    startYear: string;
+    endMonth: string;
+    endYear: string;
+    description: string;
+}
+
+interface AboutExperienceContent {
+    title: string;
+    content: ExperienceContentBlock[];
+}
+
+class AboutExperienceBlock extends AboutBlock {
+    constructor(parent: HTMLElement, id: string, content: AboutExperienceContent) {
+        super(parent, id);
+        this.appendChildren(content);
+    }
+    appendChildren(content: AboutExperienceContent) {
+        for (const block of content.content) {
+            this.children.head = new DOMElement('div', this.node, ['about-head', 'flex', 'space-between'], content.title + '-head');
+            this.children.dateBlock = new DOMElement('div', this.node, ['experience-date-block', 'flex', 'space-between'], block.school + '-date-block');
+            this.children.startDate = new ContentElement('h2', this.children.dateBlock.node, ['experience-date'], content.title + '-date', block.startMonth + '/<br>' + block.startYear);
+        }
     }
 }
 

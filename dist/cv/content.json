@@ -60,7 +60,7 @@
           "skill": "Adobe Creative Suite",
           "level": 50
         },
-        "skilBlock2": {
+        "skillBlock2": {
           "skill": "Figma",
           "level": 40
         }
@@ -69,7 +69,7 @@
     }
   },
   "experienceBlocks": {
-    "educationSection": {
+    "educationBlock": {
       "title": "EDUCATION",
       "content": [
         {
@@ -92,7 +92,7 @@
         }
       ]
     },
-    "experienceSection": {
+    "experienceBlock": {
       "title": "EXPERIENCE",
       "content": [
         {

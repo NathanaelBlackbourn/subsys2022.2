@@ -73,7 +73,12 @@ class Nav extends DOMElement{
       appendChildren() {
         this.children.intro = new AboutIntro(this.node, this.content.introBlock);
         for (const block in this.content.skillsBlocks) {
-          this.children[block] = new AboutSkillsBlock(this.node, block.title + "-block", this.content.skillsBlocks[block]);
+          const thisBlock = this.content.skillsBlocks[block];
+          this.children[block] = new AboutSkillsBlock(this.node, thisBlock.title.toLowerCase() + "-block", thisBlock);
+        }
+        for (const block in this.content.experienceBlocks) {
+          const thisBlock = this.content.experienceBlocks[block];
+          this.children[block] = new AboutExperienceBlock(this.node, thisBlock.title + '-block', thisBlock);
         }
       }
     },

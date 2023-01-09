@@ -2,21 +2,21 @@ addEventListener("DOMContentLoaded", () => {
   mainframe.init();
 });
 
-interface content {
-  [key: string]: DOMElement;
+interface children {
+  [key: string]: DOMElement
 }
 
 interface Frame {
   body: HTMLBodyElement | null;
-  elements: content;
+  elements: children;
   init(): void;
   toggleHeader(): void;
 }
 
 interface DOMElement {
   node: HTMLElement;
-  parent: HTMLElement | null;
-  children: content;
+  parent: HTMLElement| DOMElement | null;
+  children: children;
   head?: DOMElement;
   date?: DOMElement;
   title?: DOMElement;
@@ -41,10 +41,10 @@ const mainframe: Frame = {
 // Element construction
 
 class DOMElement {
-  children = {};
+  children: children = {};
   constructor(
     type: string,
-    parent: HTMLElement | null,
+    parent: HTMLElement | DOMElement | null,
     classList: string[],
     id: string
   ) {
@@ -68,7 +68,7 @@ class DOMElement {
 class Button extends DOMElement {
   text: string;
   constructor(
-    parent: HTMLElement,
+    parent: HTMLElement | DOMElement,
     classList: string[],
     id: string,
     text: string,
