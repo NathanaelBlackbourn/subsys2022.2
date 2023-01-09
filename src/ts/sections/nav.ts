@@ -42,7 +42,7 @@ class Nav extends DOMElement{
           }
         }
         const constructor = mainframe.elements.nav.templates[target]; // Question. Why do I get an error here? The code works and is copied from Stack Overflow.
-        new constructor(document.getElementById("main-container"), target);
+        mainframe.elements.nav.children.navContainer.children[target] = new constructor();
       }
     },
     projects: class Projects extends DOMElement {
@@ -59,12 +59,11 @@ class Nav extends DOMElement{
     about: class About extends DOMElement {
       content!: object;
       constructor() {
-        super("div", mainframe.elements.nav.node, ["nav-column", "content-column"], "about");
+        super("div", mainframe.elements.nav.children.navContainer.node, ["nav-column", "content-column"], "about");
         this.init();
       };
       async init() {
         await this.getContent();
-        console.log(this.content);
         this.appendChildren();
       }
       async getContent() {
@@ -72,6 +71,7 @@ class Nav extends DOMElement{
         .then((response) => response.json());
       };
       appendChildren() {
+
       }
     },
     headerFooter: class headerFooter extends DOMElement {

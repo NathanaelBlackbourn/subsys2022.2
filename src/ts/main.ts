@@ -78,9 +78,23 @@ class Button extends DOMElement {
     super("button", parent, classList, id);
     this.text = text;
     this.node.innerText = this.text;
-    console.log(clickListener);
     this.node.addEventListener('click', () => {
         clickListener(listenerTarget);
     })
+  }
+}
+
+class ContentChild extends DOMElement {
+  constructor(
+    type: string,
+    parent: HTMLElement | null,
+    classList: string[],
+    id: string,
+    content: any
+  ) {
+    super(type, parent, classList, id);
+    if (content) {
+      this.node.innerHTML = content;
+    }
   }
 }

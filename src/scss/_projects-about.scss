@@ -1,0 +1,66 @@
+@mixin block-alternation {
+    @media (min-width: $medium) {
+
+        &:nth-child(odd) {
+            flex-direction: row;
+        }
+    
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    
+        .block-part {
+            width: $horizontal-block-part;
+        }
+    }
+}
+
+// Projects layout
+
+.content-column {
+    @media (min-width: $large) {
+        width: 66%;
+    }
+}
+
+.project-block { 
+    
+    .image-container {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        background-size: cover;
+        background-position: 50%;
+        margin-bottom: $margin;
+    }
+
+    .project-head {
+        margin-bottom: 0.5 * $margin;
+    }
+
+    .project-date {
+        margin-right: $margin;
+    }
+
+    .project-title {
+        font-family: $header-font;
+    }
+
+    &:hover {
+
+        cursor: pointer;
+
+        & .see-project{
+            text-decoration: underline 1px dotted $black;
+            text-underline-offset: 2px;
+        }
+    }
+
+    @media (min-width: $medium) {
+        & {
+            justify-content: space-between;
+        }
+    }
+
+    @include block-alternation()
+}

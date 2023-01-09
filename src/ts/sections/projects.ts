@@ -32,56 +32,56 @@ class ProjectBlock extends DOMElement {
     );
   }
   addChildren() {
-    this.children.part1 = new ProjectChild(
+    this.children.part1 = new ContentChild(
       "div",
       this.node,
-      ["project-part"],
+      ["block-part"],
       this.blockName + "-part-1",
       false
     );
-    this.children.part2 = new ProjectChild(
+    this.children.part2 = new ContentChild(
       "div",
       this.node,
-      ["project-part"],
+      ["block-part"],
       this.blockName + "-part-2",
       false
     );
-    this.children.part1.head = new ProjectChild(
+    this.children.part1.head = new ContentChild(
       "div",
       document.getElementById(this.blockName + "-part-1"),
       ["project-head", "flex", "space-between"],
       this.blockName + "-head",
       false
     );
-    this.children.part1.head.date = new ProjectChild(
+    this.children.part1.head.date = new ContentChild(
       "span",
       document.getElementById(this.blockName + "-head"),
       ["project-date"],
       this.blockName + "-date",
       this.content.date
     );
-    this.children.part1.head.title = new ProjectChild(
+    this.children.part1.head.title = new ContentChild(
       "span",
       document.getElementById(this.blockName + "-head"),
       ["project-title"],
       this.blockName + "-title",
       this.content.title
     );
-    this.children.part1.seeProject = new ProjectChild(
+    this.children.part1.seeProject = new ContentChild(
       "span",
       document.getElementById(this.blockName + "-head"),
       ["see-project"],
       this.blockName + "-see",
       "see project"
     );
-    this.children.part1.imageContainer = new ProjectChild(
+    this.children.part1.imageContainer = new ContentChild(
       "div",
       document.getElementById(this.blockName + "-part-1"),
       ["image-container"],
       this.blockName + "-image",
       false
     );
-    this.children.part1.description = new ProjectChild(
+    this.children.part1.description = new ContentChild(
       "p",
       document.getElementById(this.blockName + "-part-1"),
       ["project-description"],
@@ -101,20 +101,5 @@ class ProjectBlock extends DOMElement {
       }
       mainframe.toggleHeader();
     });
-  }
-}
-
-class ProjectChild extends DOMElement {
-  constructor(
-    type: string,
-    parent: HTMLElement | null,
-    classList: string[],
-    id: string,
-    content: any
-  ) {
-    super(type, parent, classList, id);
-    if (content) {
-      this.node.innerHTML = content;
-    }
   }
 }
