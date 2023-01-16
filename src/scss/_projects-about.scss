@@ -64,3 +64,14 @@
 
     @include block-alternation()
 }
+
+
+// About Layout
+
+.about-block-title {
+    font-size: $body-size;
+}
+
+.about-block {
+    @include block-alternation()
+}

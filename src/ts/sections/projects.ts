@@ -13,7 +13,7 @@ class ProjectBlock extends DOMElement {
     super(
       "div",
       document.getElementById("projects"),
-      ["project-block", "alternate", "flex"],
+      ["project-block", "flex"],
       "project-" + i
     );
     this.projNum = i;
@@ -22,16 +22,16 @@ class ProjectBlock extends DOMElement {
   }
   async init(i: number) {
     this.content = await this.getContent(i);
-    this.addChildren();
+    this.appendChildren();
     this.getImage(i);
     this.listener(i);
   }
   async getContent(i: number) {
-    return await fetch("../work/" + i + "/project-info.json").then((response) =>
+    return await fetch("./work/" + i + "/project-info.json").then((response) =>
       response.json()
     );
   }
-  addChildren() {
+  appendChildren() {
     this.children.part1 = new DOMElement(
       "div",
       this.node,
@@ -87,13 +87,13 @@ class ProjectBlock extends DOMElement {
     console.log(this.children);
   }
   getImage(i: number) {
-    this.children.imageContainer.node.style.backgroundImage = "url(../work/" + i + "/thumbnail.png)";
+    this.children.imageContainer.node.style.backgroundImage = "url(./work/" + i + "/thumbnail.png)";
   }
   listener(i: number) {
     this.node.addEventListener("click", () => {
       const iframe = document.querySelector("iframe");
       if (iframe) {
-        iframe.src = "../work/" + i + "/index.html";
+        iframe.src = "./work/" + i + "/index.html";
       }
       mainframe.toggleHeader();
     });

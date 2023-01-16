@@ -6,13 +6,6 @@ interface children {
   [key: string]: DOMElement
 }
 
-interface Frame {
-  body: HTMLBodyElement | null;
-  elements: children;
-  init(): void;
-  toggleHeader(): void;
-}
-
 interface DOMElement {
   node: HTMLElement;
   parent: HTMLElement | null;
@@ -25,7 +18,14 @@ interface DOMElement {
   description?: DOMElement;
 }
 
-const mainframe: Frame = {
+interface Mainframe {
+  body: HTMLBodyElement | null;
+  elements: children;
+  init(): void;
+  toggleHeader(): void
+}
+
+const mainframe: Mainframe = {
   body: null,
   elements: {},
   init() {
