@@ -1,11 +1,9 @@
-interface Nav extends DOMElement {
-  templates: { [key: string]: DOMElement }; // Question. How can I type this?
-}
-
 class Nav extends DOMElement {
 
-  templates = {
-    // Question. How can I type this?
+  /**
+   * Classes used to construct child components of the nav.
+   */
+  elements = {
     navContainer: class navContainer extends DOMElement {
       constructor(parent: HTMLElement) {
         super("div", parent, ["nav-container", "flex"], "nav-container");
@@ -13,7 +11,7 @@ class Nav extends DOMElement {
     },
 
     menu: class MenuColumn extends DOMElement {
-      constructor(parent: HTMLDivElement) {
+      constructor(parent: HTMLElement) {
         super("div", parent, ["nav-column"], "menu-column");
         this.renderContent();
       }
@@ -37,13 +35,12 @@ class Nav extends DOMElement {
       }
 
       buttonListener(target: string) {
-        // console.log(navContainer); Why doesn't this work? The object is inside navContainer.
         const targetElement =
           mainframe.elements.nav.children.navContainer.children[target];
         if (targetElement) {
           targetElement.removeMe();
         } else {
-          const constructor = mainframe.elements.nav.templates[target]; // Question. Why do I get an error here? The code works and is copied from Stack Overflow.
+          const constructor = mainframe.elements.nav.elements[target]; // Question. Why do I get an error here? The code works and is copied from Stack Overflow.
           mainframe.elements.nav.children.navContainer.children[target] =
             new constructor();
         }
@@ -134,11 +131,11 @@ class Nav extends DOMElement {
     this.listeners();
   }
   appendChildren() {
-    this.children.navContainer = new this.templates.navContainer(this.node);
-    this.children.menuColumn = new this.templates.menu(
+    this.children.navContainer = new this.elements.navContainer(this.node);
+    this.children.menuColumn = new this.elements.menu(
       this.children.navContainer.node
     );
-    this.children.headerFooter = new this.templates.headerFooter(this.node);
+    this.children.headerFooter = new this.elements.headerFooter(this.node);
   }
   listeners() {}
 }
