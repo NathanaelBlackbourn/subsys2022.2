@@ -1,29 +1,14 @@
-interface ExperienceContentBlock {
-    organisation: string;
-    roll: string;
-    startMonth: string;
-    startYear: string;
-    endMonth: string;
-    endYear: string;
-    description: string;
-  }
-  
-  interface AboutExperienceContent {
-    title: string;
-    content: ExperienceContentBlock[];
-  }
-  
-  class AboutExperienceBlock extends AboutContentBlock {
+class AboutExperienceBlock extends AboutContentBlock {
     constructor(
       parent: HTMLElement,
       id: string,
-      content: AboutExperienceContent
+      content: ExperienceSection
     ) {
       super(parent, id);
       this.appendChildren(content);
     }
   
-    appendChildren(content: AboutExperienceContent) {
+    appendChildren(content: ExperienceSection) {
       for (const block of content.content) {
         this.children.part1 = new DOMElement(
           "div",

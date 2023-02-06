@@ -28,23 +28,13 @@ interface SkillsContent {
 }
 
   interface Language {
-    skills: string
+    skill: string
     level: string
   }
   
   interface Skill {
     skill: string
     level: number
-  }
-
-  interface Experience {
-    organisation: string
-    roll: string
-    startMonth: string
-    startYear: string
-    endMonth: string
-    endYear: string
-    description: string
   }
 
   interface ExperienceBlocks {
@@ -55,4 +45,14 @@ interface SkillsContent {
   interface ExperienceSection {
     title: string
     content: Experience[]
+  }
+
+  interface Experience {
+    organisation: string
+    roll: string
+    startMonth: string
+    startYear: string
+    endMonth: string
+    endYear: string
+    description: string
   }

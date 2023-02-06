@@ -18,20 +18,22 @@ class About extends DOMElement {
       this.node,
       this.content.introBlock
     );
-    for (const block in this.content.skillsBlocks) {
-      const thisBlock = this.content.skillsBlocks[block];
-      this.children[block] = new AboutSkillsBlock(
+    let skillKey: keyof SkillsBlocks
+    for (skillKey in this.content.skillsBlocks) {
+      const block = this.content.skillsBlocks[skillKey]
+      this.children[block.title] = new AboutSkillsBlock(
         this.node,
-        thisBlock.title.toLowerCase() + "-block",
-        thisBlock
+        block.title.toLowerCase() + "-block",
+        block
       );
     }
-    for (const block in this.content.experienceBlocks) {
-      const thisBlock = this.content.experienceBlocks[block];
-      this.children[block] = new AboutExperienceBlock(
+    let expKey: keyof ExperienceBlocks
+    for (expKey in this.content.experienceBlocks) {
+      const block = this.content.experienceBlocks[expKey];
+      this.children[block.title] = new AboutExperienceBlock(
         this.node,
-        thisBlock.title + "-block",
-        thisBlock
+        block.title + "-block",
+        block
       );
     }
   }

@@ -5,7 +5,7 @@ class Projects extends DOMElement {
           mainframe.elements.nav.children.navContainer.node,
           ["nav-column", "content-column"],
           "projects"
-        ); // Annoying selector
+        );
         this.renderContent();
       }
       renderContent() {
@@ -112,7 +112,7 @@ class ProjectBlock extends DOMElement {
       if (iframe) {
         iframe.src = "./work/" + i + "/index.html";
       }
-      mainframe.toggleHeader();
+      mainframe.elements.nav.toggleHeader();
     });
   }
 }

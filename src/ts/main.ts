@@ -19,7 +19,4 @@ class Mainframe {
       iframe: new DOMElement('iframe', this.body, [], "")
     };
   }
-  toggleHeader() {
-    mainframe.elements.nav?.node.classList.toggle("collapsed");
-  }
 };

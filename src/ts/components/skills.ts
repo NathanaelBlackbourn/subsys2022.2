@@ -12,13 +12,13 @@ interface AboutSkillsContent {
   
       blockName: string;
   
-    constructor(parent: HTMLElement, id: string, content: AboutSkillsContent) {
+    constructor(parent: HTMLElement, id: string, content: SkillsSection) {
       super(parent, id);
       this.blockName = content.title.toLowerCase();
       this.appendChildren(content);
     }
   
-    appendChildren(content: AboutSkillsContent) {
+    appendChildren(content: SkillsSection) {
       this.children.part1 = new DOMElement(
           "div",
           this.node,
@@ -45,7 +45,8 @@ interface AboutSkillsContent {
         content.title
       );
       let i = 1;
-      for (const row in content.content) {
+      let row: keyof SkillsContent
+      for (row in content.content) {
         this.children["row" + i] = new DOMElement(
           "div",
           this.children.part1.node,

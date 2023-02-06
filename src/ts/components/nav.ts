@@ -1,33 +1,40 @@
-class Nav extends DOMElement{
+interface iNav {
+  toggleHeader(): void;
+}
 
-  /**
-   * Classes used to construct child components of the nav.
-   */
-  elements = {
-    headerFooter: class headerFooter extends DOMElement {
-      constructor(parent: HTMLHeadElement) {
-        super("div", parent, ["flex", "space-between"], "header-footer");
-        this.appendChildren();
-      }
-      appendChildren() {
-        this.children.collapseButton = new Button(
-          this.node,
-          [],
-          "collapse-button",
-          "COLLAPSE",
-          mainframe.toggleHeader,
-        );
-      }
-    },
-  };
+class Nav extends DOMElement implements iNav {
+
   constructor(parent: HTMLBodyElement | null) {
     super("header", parent, [], "nav-frame");
     this.appendChildren();
-    this.listeners();
   }
-  appendChildren() {
+
+  private appendChildren() {
     this.children.navContainer = new navContainer(this.node);
-    this.children.headerFooter = new this.elements.headerFooter(this.node);
+    this.children.headerFooter = new HeaderFooter(this);
   }
-  listeners() {}
+
+  public toggleHeader() {
+    const navFrame = document.getElementById("nav-frame");
+    navFrame?.classList.toggle("collapsed");
+  }
+}
+
+class HeaderFooter extends DOMElement {
+  private parentNode: Nav;
+  constructor(parentNode: Nav) {
+    super("div", parentNode.node, ["flex", "space-between"], "header-footer");
+    this.parentNode = parentNode;
+    this.appendChildren();
+  }
+
+  private appendChildren() {
+    this.children.collapseButton = new Button(
+      this.node,
+      [],
+      "collapse-button",
+      "COLLAPSE",
+      this.parentNode.toggleHeader
+    );
+  }
 }
