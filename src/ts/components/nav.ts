@@ -6,7 +6,6 @@ class Nav extends DOMElement implements iNav {
 
   constructor(parent: HTMLBodyElement | null) {
     super("header", parent, [], "nav-frame");
-    console.log(this.node)
     this.appendChildren();
   }
 

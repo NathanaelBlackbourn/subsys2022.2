@@ -15,7 +15,7 @@ class Projects extends DOMElement {
       }
     }
 
-    
+
 interface projectInfo {
   date: string;
   title: string;
@@ -102,7 +102,6 @@ class ProjectBlock extends DOMElement {
       this.blockName + "-description",
       this.content.description
     );
-    console.log(this.children);
   }
   getImage(i: number) {
     this.children.imageContainer.node.style.backgroundImage = "url(./work/" + i + "/thumbnail.png)";
