@@ -7,14 +7,13 @@ class Button extends DOMElement {
       classList: string[],
       id: string | null,
       text: string,
-      clickListener: any, // Question. This is a function, how can I type it?
-      listenerTarget: string | null
+      clickListener: Function,
     ) {
       super("button", parent, classList, id);
       this.text = text;
       this.node.innerText = this.text;
       this.node.addEventListener('click', () => {
-          clickListener(listenerTarget);
+          clickListener();
       })
     }
   }

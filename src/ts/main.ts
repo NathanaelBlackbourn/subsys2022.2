@@ -21,5 +21,5 @@ class Mainframe {
   }
   toggleHeader() {
     mainframe.elements.nav?.node.classList.toggle("collapsed");
-  },
+  }
 };

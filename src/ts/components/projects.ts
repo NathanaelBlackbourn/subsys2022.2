@@ -1,3 +1,20 @@
+class Projects extends DOMElement {
+      constructor() {
+        super(
+          "div",
+          mainframe.elements.nav.children.navContainer.node,
+          ["nav-column", "content-column"],
+          "projects"
+        ); // Annoying selector
+        this.renderContent();
+      }
+      renderContent() {
+        for (let i = 1; i <= 3; i++) {
+          this.children["project" + i] = new ProjectBlock(i);
+        }
+      }
+    }
+
 interface projectInfo {
   date: string;
   title: string;
