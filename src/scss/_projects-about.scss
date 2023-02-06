@@ -68,10 +68,17 @@
 
 // About Layout
 
-.about-block-title {
-    font-size: $body-size;
+.about-block {
+    @include block-alternation();
+
+    h2, h3 {
+        font-size: $body-size;
+    }
+
+    margin-bottom: calc(3 * $margin);
 }
 
-.about-block {
-    @include block-alternation()
+.experience-section {
+    margin-top: calc(7 * $margin);
+    font-size: $body-size
 }

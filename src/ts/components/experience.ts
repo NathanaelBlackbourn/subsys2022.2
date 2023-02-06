@@ -1,24 +1,35 @@
-class AboutExperienceBlock extends AboutContentBlock {
+class AboutExperienceBlock extends DOMElement {
     constructor(
       parent: HTMLElement,
       id: string,
       content: ExperienceSection
     ) {
-      super(parent, id);
+      super("div", parent, ["experience-section"], id);
       this.appendChildren(content);
     }
   
     appendChildren(content: ExperienceSection) {
+      this.children.title = new ContentElement(
+        "h2",
+        this.node,
+        [],
+        content.title + "-title",
+        content.title
+      )
       for (const block of content.content) {
+        this.children.container = new AboutContentBlock (
+          this.node,
+          block.organisation + " block"
+        )
         this.children.part1 = new DOMElement(
           "div",
-          this.node,
+          this.children.container.node,
           ["block-part"],
           null
         );
         this.children.part2 = new DOMElement(
           "div",
-          this.node,
+          this.children.container.node,
           ["block-part"],
           null
         );
@@ -77,6 +88,7 @@ class AboutExperienceBlock extends AboutContentBlock {
           block.description
         );
       }
+      console.log(this.children);
     }
   }
   
