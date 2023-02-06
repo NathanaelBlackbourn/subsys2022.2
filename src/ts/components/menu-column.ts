@@ -1,26 +1,25 @@
-
-
    class MenuColumn extends DOMElement {
-    parentNode: navContainer;
+    private parentNode: navContainer;
         constructor(parent: HTMLElement, parentNode: navContainer) {
           super("div", parent, ["nav-column"], "menu-column");
           this.parentNode = parentNode;
           this.appendChildren();
         }
+
         appendChildren() {
           this.children.projectsButton = new Button(
             this.node,
             [],
             "projects-button",
             "PROJECTS",
-            this.openProjects,
+            this.openProjects.bind(this),
           );
           this.children.aboutButton = new Button(
             this.node,
             [],
             "about-button",
             "ABOUT",
-            this.openAbout,
+            this.openAbout.bind(this),
           );
         }
 

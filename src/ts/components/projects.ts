@@ -15,6 +15,7 @@ class Projects extends DOMElement {
       }
     }
 
+    
 interface projectInfo {
   date: string;
   title: string;

@@ -6,6 +6,7 @@ class Nav extends DOMElement implements iNav {
 
   constructor(parent: HTMLBodyElement | null) {
     super("header", parent, [], "nav-frame");
+    console.log(this.node)
     this.appendChildren();
   }
 
@@ -15,8 +16,7 @@ class Nav extends DOMElement implements iNav {
   }
 
   public toggleHeader() {
-    const navFrame = document.getElementById("nav-frame");
-    navFrame?.classList.toggle("collapsed");
+    this.node.classList.toggle("collapsed");
   }
 }
 
@@ -34,7 +34,7 @@ class HeaderFooter extends DOMElement {
       [],
       "collapse-button",
       "COLLAPSE",
-      this.parentNode.toggleHeader
+      this.parentNode.toggleHeader.bind(this.parentNode)
     );
   }
 }
