@@ -9,13 +9,21 @@ class AboutExperienceBlock extends DOMElement {
     }
   
     appendChildren(content: ExperienceSection) {
+
+      /**
+       * Experience section title.
+       */
       this.children.title = new ContentElement(
         "h2",
         this.node,
-        [],
+        ['exp-title'],
         content.title + "-title",
         content.title
       )
+
+      /**
+       * Responsive alternating blocks.
+       */
       for (const block of content.content) {
         this.children.container = new AboutContentBlock (
           this.node,
@@ -24,30 +32,34 @@ class AboutExperienceBlock extends DOMElement {
         this.children.part1 = new DOMElement(
           "div",
           this.children.container.node,
-          ["block-part"],
+          ["block-part", "block-part-1"],
           null
         );
         this.children.part2 = new DOMElement(
           "div",
           this.children.container.node,
-          ["block-part"],
+          ["block-part", "block-part-2"],
           null
         );
+
+        /**
+         * Head row.
+         */
         this.children.head = new DOMElement(
           "div",
           this.children.part1.node,
-          ["about-head", "flex", "space-between"],
+          ["flex", "space-between"],
           content.title + "-head"
         );
         this.children.organisation = new ContentElement(
-          "h2",
+          "h3",
           this.children.head.node,
           ["about-organisation"],
           block.organisation,
           block.organisation
         );
         this.children.roll = new ContentElement(
-          "h2",
+          "h3",
           this.children.head.node,
           ["about-course"],
           block.roll,
@@ -60,7 +72,7 @@ class AboutExperienceBlock extends DOMElement {
           null
         );
         this.children.startDate = new ContentElement(
-          "h2",
+          "h3",
           this.children.dateBlock.node,
           ["experience-start-date"],
           content.title + "-date",
@@ -73,12 +85,13 @@ class AboutExperienceBlock extends DOMElement {
           block.organisation + "-to",
           "to"
         );
+
         this.children.endDate = new ContentElement(
-          "h2",
+          "h3",
           this.children.dateBlock.node,
           ["experience-end-date"],
           null,
-          block.endMonth + "/<br>" + block.endYear
+          block.endMonth + this.slashOrNoSlash(block.endYear) + block.endYear
         );
         this.children.description = new ContentElement(
           "p",
@@ -88,7 +101,14 @@ class AboutExperienceBlock extends DOMElement {
           block.description
         );
       }
-      console.log(this.children);
+    }
+
+    private slashOrNoSlash(endYear: string) {
+      let shroedingersSlash: string = "/<br>"
+      if (endYear === "now") {
+        shroedingersSlash = "<br>"
+      }
+      return shroedingersSlash;
     }
   }
   

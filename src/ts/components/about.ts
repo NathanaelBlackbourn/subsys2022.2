@@ -64,19 +64,19 @@ class AboutIntro extends DOMElement {
       "about-intro-name",
       content.name
     );
-    this.children.title = new ContentElement(
-      "h1",
-      this.node,
-      [],
-      "about-intro-title",
-      content.title
-    );
     this.children.text = new ContentElement(
       "p",
       this.node,
       [],
       "about-intro-text",
       content.sliderText
+    );
+    this.children.title = new ContentElement(
+      "h1",
+      this.node,
+      [],
+      "about-intro-title",
+      content.title
     );
   }
 }

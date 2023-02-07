@@ -1,0 +1,29 @@
+@import url("https://use.typekit.net/khp0gjo.css");
+
+$main-font: 'pennypacker-light', 'Helvetica', sans-serif;
+$header-font: 'pennypacker-semiwide', 'Helvetica', sans-serif;
+
+$body-weight: 300;
+$body-size: 15px;
+$body-height: 1.5rem;
+$body-spacing: 0.8px;
+
+
+@mixin type-XL {
+    font-family: $header-font;
+    font-size: calc(2 * $body-size);
+    font-weight: 400;
+}
+
+@mixin type-L {
+    font-family: $header-font;
+    font-size: calc($body-size);
+    font-weight: 300;
+}
+
+@mixin type-M {
+    font-family: $main-font;
+    font-size: $body-size;
+    font-weight: 300;
+    line-height: $body-height;
+}

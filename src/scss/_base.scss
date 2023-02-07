@@ -1,11 +1,13 @@
-html {
+* {
     box-sizing: border-box;
+}
+
+html {
     padding: 0;
     color: $black;
     font-family: $main-font;
     font-weight: $body-weight;
     font-size: $body-size;
-    line-height: $body-height;
     letter-spacing: $body-spacing;
 }
 
@@ -22,15 +24,15 @@ header {
 }
 
 h1 {
-    font-family: $header-font;
+    @include type-XL;
 }
 
-h2 {
-    font-family: $header-font;
+h2 { 
+    @include type-L;
 }
 
 h3 {
-    font-family: $header-font;
+    @include type-M;
 }
 
 button {
@@ -52,4 +54,5 @@ iframe {
 p {
     margin-top: 0;
     margin-bottom: 0;
+    @include type-M;
 }

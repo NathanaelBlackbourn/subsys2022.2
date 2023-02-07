@@ -10,7 +10,7 @@ interface AboutSkillsContent {
   
   class AboutSkillsBlock extends AboutContentBlock {
   
-      blockName: string;
+      private blockName: string;
   
     constructor(parent: HTMLElement, id: string, content: SkillsSection) {
       super(parent, id);
@@ -19,22 +19,29 @@ interface AboutSkillsContent {
     }
   
     appendChildren(content: SkillsSection) {
+      /**
+       * Responsive alternating blocks.
+       */
       this.children.part1 = new DOMElement(
           "div",
           this.node,
-          ["block-part"],
+          ["block-part", "block-part-1"],
           this.blockName + "-part-1"
         );
         this.children.part2 = new DOMElement(
           "div",
           this.node,
-          ["block-part"],
+          ["block-part", "block-part-2"],
           this.blockName + "-part-2"
         );
+
+        /**
+         * Skills blocks
+         */
       this.children.head = new DOMElement(
         "div",
         this.children.part1.node,
-        ["about-head", "flex", "space-between"],
+        ["skills-head", "flex"],
         content.title + "-head"
       );
       this.children.title = new ContentElement(
@@ -44,6 +51,10 @@ interface AboutSkillsContent {
         content.title + "-title",
         content.title
       );
+
+      /**
+       * Rows
+       */
       let i = 1;
       let row: keyof SkillsContent
       for (row in content.content) {
@@ -53,8 +64,12 @@ interface AboutSkillsContent {
           ["skill-row", "flex", "space-between"],
           content.title + "-row-" + i
         );
+        
+        /**
+         * Items on rows
+         */
         for (const item in content.content[row]) {
-          const skillBlock = content.content[row][item]; // Question. Same error here again. Functioning code.
+          const skillBlock = content.content[row][item];
           this.children[skillBlock.skill] = new ContentElement(
             "h3",
             this.children["row" + i].node,
