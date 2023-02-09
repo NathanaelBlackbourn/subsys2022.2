@@ -1,6 +1,6 @@
 .menu-button {
     line-height: $body-height;
-    transition-property: font-size margin;
+    transition-property: font-size line-height;
     transition-duration: 200ms;
     transition-timing-function: ease;
 
@@ -14,7 +14,7 @@
 }
 
 .section-open {
-    margin: 1rem 0;
+    line-height: 2 * $body-height;
     @include type-XL;
 
     &:hover {
