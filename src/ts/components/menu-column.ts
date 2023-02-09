@@ -28,10 +28,14 @@
         }
 
         private async openColumn(target: string) {
+          for (const child in this.children) {
+            if (this.children[child] instanceof Button) {
+              this.children[child].node.classList.remove("section-open");
+            }
+          }
           switch (this.activeColumn) {
             case target:
               const toggleMeOff = this.parentNode.children[target];
-              toggleMeOff.node.classList.remove("section-open");
               toggleMeOff.removeMe();
               this.activeColumn = "none";
               break;
@@ -40,11 +44,6 @@
               for (const child in this.parentNode.children) {
                 if (child != "menuColumn" && child != target) {
                   const prevColumn = this.parentNode.children[child];
-                  for (const child in this.children) {
-                    if (this.children[child] instanceof Button) {
-                      this.children[child].node.classList.remove("section-open");
-                    }
-                  }
                   prevColumn.removeMe();
                 }
               }
