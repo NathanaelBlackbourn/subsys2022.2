@@ -6,7 +6,7 @@
 
 .about-block {
     width: 100%;
-    margin-bottom: calc(5 * $margin);
+    margin-bottom: calc(3 * $margin);
 
     @media (min-width: $medium) {
         width: $horizontal-block-part;

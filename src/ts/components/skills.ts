@@ -29,7 +29,7 @@ interface AboutSkillsContent {
         ["skills-head", "flex"],
         content.title + "-head"
       );
-      this.children.title = new ContentElement(
+      this.children.title = new DOMElement(
         "h2",
         this.children.head.node,
         ["about-block-title"],
@@ -55,7 +55,7 @@ interface AboutSkillsContent {
          */
         for (const item in content.content[row]) {
           const skillBlock = content.content[row][item];
-          this.children[skillBlock.skill] = new ContentElement(
+          this.children[skillBlock.skill] = new DOMElement(
             "h3",
             this.children["row" + i].node,
             ["skill-element", "about-h3"],

@@ -70,21 +70,21 @@ class ProjectBlock extends DOMElement {
       ["project-head", "flex", "space-between"],
       this.blockName + "-head"
     );
-    this.children.date = new ContentElement(
+    this.children.date = new DOMElement(
       "span",
       this.children.head.node,
       ["project-date"],
       this.blockName + "-date",
       this.content.date
     );
-    this.children.title = new ContentElement(
+    this.children.title = new DOMElement(
       "span",
       this.children.head.node,
       ["project-title"],
       this.blockName + "-title",
       this.content.title
     );
-    this.children.seeProject = new ContentElement(
+    this.children.seeProject = new DOMElement(
       "span",
       this.children.head.node,
       ["see-project"],
@@ -97,7 +97,7 @@ class ProjectBlock extends DOMElement {
       ["image-container"],
       this.blockName + "-image"
     );
-    this.children.description = new ContentElement(
+    this.children.description = new DOMElement(
       "p",
       this.children.part1.node,
       ["project-description"],

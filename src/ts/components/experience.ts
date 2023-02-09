@@ -11,7 +11,7 @@ class AboutExperienceBlock extends DOMElement {
     appendChildren(content: ExperienceSection) {
 
       // Experience section titles.
-      this.children.title = new ContentElement(
+      this.children.title = new DOMElement(
         "h2",
         this.node,
         ['about-block-title'],
@@ -33,14 +33,14 @@ class AboutExperienceBlock extends DOMElement {
           ["flex", "space-between"],
           content.title + "-head"
         );
-        this.children.organisation = new ContentElement(
+        this.children.organisation = new DOMElement(
           "h3",
           this.children.head.node,
           ["about-organisation", "about-h3"],
           block.organisation,
           block.organisation
         );
-        this.children.roll = new ContentElement(
+        this.children.roll = new DOMElement(
           "h3",
           this.children.head.node,
           ["about-course", "about-h3"],
@@ -53,14 +53,14 @@ class AboutExperienceBlock extends DOMElement {
           ["experience-date-block", "flex", "space-between"],
           null
         );
-        this.children.startDate = new ContentElement(
+        this.children.startDate = new DOMElement(
           "h3",
           this.children.dateBlock.node,
           ["experience-start-date", "about-h3"],
           content.title + "-date",
           block.startMonth + "/<br>" + block.startYear
         );
-        this.children.to = new ContentElement(
+        this.children.to = new DOMElement(
           "div",
           this.children.dateBlock.node,
           ["to"],
@@ -68,14 +68,14 @@ class AboutExperienceBlock extends DOMElement {
           "to"
         );
 
-        this.children.endDate = new ContentElement(
+        this.children.endDate = new DOMElement(
           "h3",
           this.children.dateBlock.node,
           ["experience-end-date", "about-h3"],
           null,
           block.endMonth + this.slashOrNoSlash(block.endYear) + block.endYear
         );
-        this.children.description = new ContentElement(
+        this.children.description = new DOMElement(
           "p",
           this.children.container.node,
           ["experience-description"],

@@ -12,8 +12,8 @@ $neg-margin: -1rem;
 
 $container-width: 100%;
 
-$horizontal-block-part: calc(50% - 4 * $margin);
-$alternating-block-part: 60%;
+$horizontal-block-part: calc(50% - 2 * $margin);
+$alternating-block-part: calc(50% - $margin);
 
 
 // Responsivity

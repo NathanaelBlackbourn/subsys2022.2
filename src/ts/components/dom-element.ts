@@ -2,6 +2,10 @@ interface children {
     [key: string]: DOMElement
   }
 
+  interface Attributes {
+    [key: string]: string
+  }
+
 interface DOMElement {
     node: HTMLElement;
     parent: HTMLElement | null;
@@ -20,7 +24,9 @@ class DOMElement {
       type: string,
       parent: HTMLElement | null,
       classList: string[],
-      id: string | null
+      id: string | null,
+      content?: string,
+      attributes?: Attributes
     ) {
       this.node = document.createElement(type);
       this.parent = parent;
@@ -31,6 +37,15 @@ class DOMElement {
         this.node.id = id;
       };
       this.render();
+      if (content) {
+        this.node.innerHTML = content
+      }
+      if (attributes) {
+        for (const key in attributes) {
+          const value: keyof Attributes = attributes[key]
+          this.node.setAttribute(key, value);
+        }
+      }
     }
     render() {
       this.parent?.append(this.node);

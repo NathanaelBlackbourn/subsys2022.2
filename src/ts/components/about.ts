@@ -74,14 +74,14 @@ class AboutIntro extends DOMElement {
     )
 
     // Intre section text elements.
-    this.children.name = new ContentElement(
+    this.children.name = new DOMElement(
       "h1",
       this.children.nameBlock.node,
       [],
       "about-intro-name",
       content.name
     );
-    this.children.text = new ContentElement(
+    this.children.text = new DOMElement(
       "p",
       this.children.captionBlock.node,
       [],
