@@ -7,34 +7,21 @@ class Nav extends DOMElement implements iNav {
   constructor(parent: HTMLBodyElement | null) {
     super("header", parent, [], "nav-frame");
     this.appendChildren();
+    this.addListeners();
   }
 
   private appendChildren() {
     this.children.navContainer = new navContainer(this.node);
     this.children.collapseButton = new CollapseButton(this.node);
-    // this.children.headerFooter = new HeaderFooter(this);
   }
 
   public toggleHeader = () => {
     this.node.classList.toggle("collapsed");
+    this.children.collapseButton.node.classList.toggle("collapsed-pos");
+    this.children.collapseButton.node.classList.toggle("open-pos");
+  }
+
+  private addListeners() {
+    this.children.collapseButton.node.addEventListener("click", this.toggleHeader);
   }
 }
-
-// class HeaderFooter extends DOMElement {
-//   private parentNode: Nav;
-//   constructor(parentNode: Nav) {
-//     super("div", parentNode.node, ["flex", "space-between"], "header-footer");
-//     this.parentNode = parentNode;
-//     this.appendChildren();
-//   }
-
-//   private appendChildren() {
-//     this.children.collapseButton = new Button(
-//       this.node,
-//       [],
-//       "collapse-button",
-//       "COLLAPSE",
-//       this.parentNode.toggleHeader.bind(this.parentNode)
-//     );
-//   }
-// }
