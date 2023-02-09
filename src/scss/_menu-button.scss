@@ -1,0 +1,27 @@
+.menu-button {
+    line-height: $body-height;
+    transition-property: font-size margin;
+    transition-duration: 200ms;
+    transition-timing-function: ease;
+
+    &:hover {
+        @include type-L;
+    }
+
+    &:active {
+        font-size: 13px;
+    }
+}
+
+.section-open {
+    margin: 1rem 0;
+    @include type-XL;
+
+    &:hover {
+        font-size: 2.1 * $body-size;
+    }
+
+    &:active {
+        font-size: 1.9 * $body-size;
+    }
+}

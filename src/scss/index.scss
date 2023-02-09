@@ -1,11 +1,26 @@
 // Variables
 @import 'variables';
+
+// Rules for typography
 @import 'typography';
 
 // User agent styles reset
 @import 'base';
+
+// Small classes used to apply or toggle certain rules.
 @import 'reusable';
+
+// Structure of main header elements
 @import 'nav';
+
+// Rules controlling menu button interactivity
+@import 'menu-button';
+
+// The 'column' containing about/projects
 @import 'content-column';
+
+// Portoflio of projects from school
 @import 'projects';
+
+// CV section
 @import 'about';
