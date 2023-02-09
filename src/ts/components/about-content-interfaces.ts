@@ -8,7 +8,7 @@ interface AboutContent {
   interface IntroBlock {
     name: string
     title: string
-    sliderText: string
+    introText: string
   }
 
 interface SkillsBlocks {

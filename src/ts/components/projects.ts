@@ -50,16 +50,18 @@ class ProjectBlock extends DOMElement {
     );
   }
   appendChildren() {
+
+    // Alternating block parts.
     this.children.part1 = new DOMElement(
       "div",
       this.node,
-      ["block-part"],
+      ["block-part", "block-part-1"],
       this.blockName + "-part-1"
     );
     this.children.part2 = new DOMElement(
       "div",
       this.node,
-      ["block-part"],
+      ["block-part", "block-oart-2"],
       this.blockName + "-part-2"
     );
     this.children.head = new DOMElement(

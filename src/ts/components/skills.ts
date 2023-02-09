@@ -19,28 +19,13 @@ interface AboutSkillsContent {
     }
   
     appendChildren(content: SkillsSection) {
-      /**
-       * Responsive alternating blocks.
-       */
-      this.children.part1 = new DOMElement(
-          "div",
-          this.node,
-          ["block-part", "block-part-1"],
-          this.blockName + "-part-1"
-        );
-        this.children.part2 = new DOMElement(
-          "div",
-          this.node,
-          ["block-part", "block-part-2"],
-          this.blockName + "-part-2"
-        );
 
         /**
          * Skills blocks
          */
       this.children.head = new DOMElement(
         "div",
-        this.children.part1.node,
+        this.node,
         ["skills-head", "flex"],
         content.title + "-head"
       );
@@ -60,7 +45,7 @@ interface AboutSkillsContent {
       for (row in content.content) {
         this.children["row" + i] = new DOMElement(
           "div",
-          this.children.part1.node,
+          this.node,
           ["skill-row", "flex", "space-between"],
           content.title + "-row-" + i
         );

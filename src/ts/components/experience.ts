@@ -29,25 +29,13 @@ class AboutExperienceBlock extends DOMElement {
           this.node,
           block.organisation + " block"
         )
-        this.children.part1 = new DOMElement(
-          "div",
-          this.children.container.node,
-          ["block-part", "block-part-1"],
-          null
-        );
-        this.children.part2 = new DOMElement(
-          "div",
-          this.children.container.node,
-          ["block-part", "block-part-2"],
-          null
-        );
 
         /**
          * Head row.
          */
         this.children.head = new DOMElement(
           "div",
-          this.children.part1.node,
+          this.children.container.node,
           ["flex", "space-between"],
           content.title + "-head"
         );
@@ -67,7 +55,7 @@ class AboutExperienceBlock extends DOMElement {
         );
         this.children.dateBlock = new DOMElement(
           "div",
-          this.children.part1.node,
+          this.children.container.node,
           ["experience-date-block", "flex", "space-between"],
           null
         );
@@ -95,7 +83,7 @@ class AboutExperienceBlock extends DOMElement {
         );
         this.children.description = new ContentElement(
           "p",
-          this.children.part1.node,
+          this.children.container.node,
           ["experience-description"],
           null,
           block.description

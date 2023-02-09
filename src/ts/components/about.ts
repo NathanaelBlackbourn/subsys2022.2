@@ -6,7 +6,7 @@ class About extends DOMElement {
     super(
       "div",
       mainframe.elements.nav.children.navContainer.node,
-      ["nav-column", "content-column"],
+      ["nav-column", "content-column", "flex"],
       "about"
     );
     this.content = aboutContent;
@@ -47,36 +47,42 @@ interface CVIntroContent {
 
 class AboutContentBlock extends DOMElement {
   constructor(parent: HTMLElement, id: string) {
-    super("div", parent, ["about-block", "flex"], id);
+    super("div", parent, ["about-block"], id);
   }
 }
 
+// Intro section at top of about
 class AboutIntro extends DOMElement {
   constructor(parent: HTMLElement, content: IntroBlock) {
-    super("div", parent, [], "cv-intro");
+    super("div", parent, ["flex"], "cv-intro");
     this.appendChildren(content);
   }
   appendChildren(content: IntroBlock) {
+    this.children.nameBlock = new DOMElement(
+      "div",
+      this.node,
+      ["about-block"],
+      "name-block"
+    )
+    this.children.captionBlock = new DOMElement(
+      "div",
+      this.node,
+      ["about-block"],
+      "caption-block"
+    )
     this.children.name = new ContentElement(
       "h1",
-      this.node,
+      this.children.nameBlock.node,
       [],
       "about-intro-name",
       content.name
     );
     this.children.text = new ContentElement(
       "p",
-      this.node,
+      this.children.captionBlock.node,
       [],
       "about-intro-text",
-      content.sliderText
-    );
-    this.children.title = new ContentElement(
-      "h1",
-      this.node,
-      [],
-      "about-intro-title",
-      content.title
+      content.introText
     );
   }
 }

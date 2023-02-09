@@ -1,0 +1,8 @@
+.content-column {
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @media (min-width: $large) {
+        width: 66.66%;
+    }
+}

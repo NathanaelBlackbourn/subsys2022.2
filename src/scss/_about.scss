@@ -1,0 +1,23 @@
+#cv-intro {
+    height: 20vh;
+    width: 100%;
+    margin-bottom: calc(2 * $margin);
+}
+
+.about-block {
+    width: $horizontal-block-part;
+    margin-bottom: calc(3 * $margin);
+}
+
+.skills-head {
+    justify-content: center;
+}
+
+.experience-section {
+    margin-top: calc(7 * $margin);   
+}
+
+.exp-title {
+
+    text-align: center;
+}
