@@ -5,8 +5,21 @@
 }
 
 .about-block {
-    width: $horizontal-block-part;
-    margin-bottom: calc(3 * $margin);
+    width: 100%;
+    margin-bottom: calc(5 * $margin);
+
+    @media (min-width: $medium) {
+        width: $horizontal-block-part;
+    }
+}
+
+.about-block-title {
+    width: 100%;
+    margin-bottom: (3 * $margin);
+}
+
+.about-h3 {
+    margin-bottom: $margin;
 }
 
 .skills-head {
@@ -14,10 +27,6 @@
 }
 
 .experience-section {
-    margin-top: calc(7 * $margin);   
-}
-
-.exp-title {
-
-    text-align: center;
+    flex-wrap: wrap;
+    margin-top: $margin;   
 }

@@ -54,10 +54,12 @@ class AboutContentBlock extends DOMElement {
 // Intro section at top of about
 class AboutIntro extends DOMElement {
   constructor(parent: HTMLElement, content: IntroBlock) {
-    super("div", parent, ["flex"], "cv-intro");
+    super("div", parent, ["space-between"], "cv-intro");
     this.appendChildren(content);
   }
   appendChildren(content: IntroBlock) {
+
+    // Block containers
     this.children.nameBlock = new DOMElement(
       "div",
       this.node,
@@ -70,6 +72,8 @@ class AboutIntro extends DOMElement {
       ["about-block"],
       "caption-block"
     )
+
+    // Intre section text elements.
     this.children.name = new ContentElement(
       "h1",
       this.children.nameBlock.node,

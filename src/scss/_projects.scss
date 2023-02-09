@@ -4,7 +4,7 @@
     width: 100%;
 
     @media (min-width: $medium) {
-        width: $horizontal-block-part;
+        width: $alternating-block-part;
     }
 }
 
@@ -20,14 +20,15 @@
         }
     
         .block-part-2 {
-            width: $horizontal-block-part;
+            flex: 1;
         }
     }
 }
 
 // Projects layout
 
-.project-block { 
+.project-block {
+    margin-bottom: 5 * $margin; 
     
     .image-container {
         position: relative;
@@ -67,4 +68,5 @@
     }
 
     @include block-alternation()
+
 }

@@ -58,7 +58,7 @@ interface AboutSkillsContent {
           this.children[skillBlock.skill] = new ContentElement(
             "h3",
             this.children["row" + i].node,
-            ["skill-element"],
+            ["skill-element", "about-h3"],
             skillBlock.skill + "-element",
             skillBlock.skill
           );
