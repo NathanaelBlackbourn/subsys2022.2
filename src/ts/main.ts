@@ -18,5 +18,6 @@ class Mainframe {
       nav: new Nav(this.body),
       iframe: new DOMElement('iframe', this.body, [], "")
     };
+    this.elements.iframe.node.src = "./welcome/index.html";
   }
 };

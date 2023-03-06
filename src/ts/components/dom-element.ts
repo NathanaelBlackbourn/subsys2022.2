@@ -7,7 +7,7 @@ interface children {
   }
 
 interface DOMElement {
-    node: HTMLElement;
+    node: HTMLIFrameElement | HTMLElement;
     parent: HTMLElement | null;
     children: children;
     head?: DOMElement;

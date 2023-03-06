@@ -17,7 +17,7 @@ $body-spacing: 0.8px;
 
 @mixin type-L {
     font-family: $header-font;
-    font-size: calc($body-size);
+    font-size: $body-size;
     font-weight: 300;
 }
 

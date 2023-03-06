@@ -1,0 +1,57 @@
+@import url("https://use.typekit.net/khp0gjo.css");
+
+* {
+  box-sizing: border-box;
+  --black: #2c2724;
+  --blue: #e3fffe;
+  --strk-width: 4px;
+  --innerSize: calc(50% + var(--strk-width));
+}
+
+body {
+  position: relative;
+  margin: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--black);
+}
+
+h1 {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--blue);
+    font-family: "pennypacker-semiwide", "Helvetica", sans-serif;
+    font-weight: 200;
+    letter-spacing: 2px;
+}
+
+div {
+  position: absolute;
+  border: var(--strk-width) solid var(--blue);
+  border-radius: 50%;
+}
+
+#outer {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.inner-circle {
+    width: var(--innerSize);
+    height: var(--innerSize);
+    left: calc(25% - var(--strk-width));
+    transform: rotate(0deg);
+}
+
+#inner1 {
+  transform-origin: bottom;
+  top: calc(-1 * var(--strk-width) / 2);
+}
+
+#inner2 {
+  transform-origin: top;
+  top: calc(50% - var(--strk-width) + calc(var(--strk-width) / 2));
+}
