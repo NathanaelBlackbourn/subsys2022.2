@@ -73,7 +73,7 @@ class AboutIntro extends DOMElement {
       "caption-block"
     )
 
-    // Intre section text elements.
+    // Intro section text elements.
     this.children.name = new DOMElement(
       "h1",
       this.children.nameBlock.node,
@@ -87,6 +87,20 @@ class AboutIntro extends DOMElement {
       [],
       "about-intro-text",
       content.introText
+    );
+    this.children.text = new DOMElement(
+      "p",
+      this.children.captionBlock.node,
+      [],
+      "",
+      "nathanaelblackbourn@gmail.com"
+    );
+    this.children.text = new DOMElement(
+      "p",
+      this.children.captionBlock.node,
+      [],
+      "",
+      '<a target="blank" href="https://github.com/nathanaelblackbourn">see my github</a>'
     );
   }
 }

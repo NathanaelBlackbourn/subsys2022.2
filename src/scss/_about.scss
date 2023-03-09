@@ -1,7 +1,10 @@
 #cv-intro {
-    height: 20vh;
     width: 100%;
     margin-bottom: calc(2 * $margin);
+    flex-wrap: wrap;
+    @media (max-width: $medium) {
+        padding-bottom: 2rem;
+    }
 }
 
 .about-block {

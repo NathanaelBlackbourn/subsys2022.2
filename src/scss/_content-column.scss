@@ -5,4 +5,8 @@
     @media (min-width: $large) {
         width: 66.66%;
     }
+
+    @media(max-width: $large) {
+        margin-top: 3rem;
+    }
 }

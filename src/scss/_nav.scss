@@ -100,7 +100,8 @@ header {
 
     .st1 {
         fill: transparent;
-        @include svg-stroke;
+        stroke: $black;
+        stroke-width: 2px;
     }
 
 }
