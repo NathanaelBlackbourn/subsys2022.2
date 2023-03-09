@@ -5,7 +5,7 @@ interface iNav {
 class Nav extends DOMElement implements iNav {
 
   constructor(parent: HTMLBodyElement | null) {
-    super("header", parent, [], "nav-frame");
+    super("header", parent, ["collapsed"], "nav-frame");
     this.appendChildren();
     this.addListeners();
   }
