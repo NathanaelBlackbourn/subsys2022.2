@@ -16,9 +16,15 @@ class Nav extends DOMElement implements iNav {
   }
 
   public toggleHeader = () => {
+    const button = this.children.collapseButton.node
     this.node.classList.toggle("collapsed");
-    this.children.collapseButton.node.classList.toggle("collapsed-pos");
-    this.children.collapseButton.node.classList.toggle("open-pos");
+    if (button.classList.contains("unopened")) {
+      button.classList.toggle("open-pos");
+      button.classList.remove("unopened");
+    } else {
+    button.classList.toggle("collapsed-pos");
+    button.classList.toggle("open-pos");
+    }
   }
 
   private addListeners() {

@@ -3,7 +3,7 @@ class CollapseButton extends DOMElement {
     super(
       "div",
       parent,
-      ["open-pos"],
+      ["unopened"],
       "collapse-button",
       `<svg id="collapse-button-svg" viewBox="0 0 100 100">
  <g>
