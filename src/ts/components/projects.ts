@@ -1,20 +1,19 @@
 class Projects extends DOMElement {
-      constructor() {
-        super(
-          "div",
-          mainframe.elements.nav.children.navContainer.node,
-          ["nav-column", "content-column"],
-          "projects"
-        );
-        this.renderContent();
-      }
-      renderContent() {
-        for (let i = 1; i <= 3; i++) {
-          this.children["project" + i] = new ProjectBlock(i);
-        }
-      }
+  constructor() {
+    super(
+      "div",
+      mainframe.elements.nav.children.navContainer.node,
+      ["nav-column", "content-column"],
+      "projects"
+    );
+    this.renderContent();
+  }
+  renderContent() {
+    for (let i = 1; i <= 3; i++) {
+      this.children["project" + i] = new ProjectBlock(i);
     }
-
+  }
+}
 
 interface projectInfo {
   date: string;
@@ -50,7 +49,6 @@ class ProjectBlock extends DOMElement {
     );
   }
   appendChildren() {
-
     // Alternating block parts.
     this.children.part1 = new DOMElement(
       "div",
@@ -69,13 +67,6 @@ class ProjectBlock extends DOMElement {
       this.children.part1.node,
       ["project-head", "flex", "space-between"],
       this.blockName + "-head"
-    );
-    this.children.date = new DOMElement(
-      "span",
-      this.children.head.node,
-      ["project-date"],
-      this.blockName + "-date",
-      this.content.date
     );
     this.children.title = new DOMElement(
       "span",
@@ -106,7 +97,8 @@ class ProjectBlock extends DOMElement {
     );
   }
   getImage(i: number) {
-    this.children.imageContainer.node.style.backgroundImage = "url(./work/" + i + "/thumbnail.png)";
+    this.children.imageContainer.node.style.backgroundImage =
+      "url(./work/" + i + "/thumbnail.png)";
   }
   listener(i: number) {
     this.node.addEventListener("click", () => {

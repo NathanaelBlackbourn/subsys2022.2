@@ -139,7 +139,7 @@ a:hover {
     height: 100vh;
     margin-bottom: 50px;
     overflow: hidden;
-    background-image: url(bilder/huvud.jpeg);
+    background-image: url(Bilder/huvud.jpeg);
     background-size: cover;
     background-position: 50%;
 }
@@ -648,6 +648,7 @@ blockquote {
 /* Footer */
 
 .mainfooter {
+    background-color: #f7f7f7;
     padding: 60px 0;
     overflow: hidden;
 }

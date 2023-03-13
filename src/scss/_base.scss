@@ -1,65 +1,66 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-    padding: 0;
-    color: $black;
-    font-family: $main-font;
-    font-weight: $body-weight;
-    font-size: $body-size;
-    letter-spacing: $body-spacing;
+  padding: 0;
+  color: $black;
+  font-family: $main-font;
+  font-weight: $body-weight;
+  font-size: $body-size;
+  letter-spacing: $body-spacing;
 }
 
 body {
-    margin: 0;
-    background: $black;
+  margin: 0;
+  background: $black;
 }
 
 @mixin removeHeaderMargins {
-    margin-top: 0;
-    margin-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 h1 {
-    @include type-XL;
-    @include removeHeaderMargins;
+  @include type-XL;
+  @include removeHeaderMargins;
 }
 
-h2 { 
-    @include type-L;
-    @include removeHeaderMargins;
+h2 {
+  @include type-L;
+  @include removeHeaderMargins;
 }
 
 h3 {
-    @include type-M;
-    @include removeHeaderMargins;
+  @include type-M;
+  @include removeHeaderMargins;
 }
 
 button {
-    display: block;
-    border: 0;
-    outline: none;
-    color: $black;
-    font-family: $header-font;
-    background: transparent;
-    cursor: pointer;
+  display: block;
+  border: 0;
+  padding: 0;
+  outline: none;
+  color: $black;
+  font-family: $header-font;
+  background: transparent;
+  cursor: pointer;
 }
 
 iframe {
-    border: none;
-    height: 100vh;
-    width: 100%;
+  border: none;
+  height: 100vh;
+  width: 100%;
 }
 
 p {
-    margin-top: 0;
-    margin-bottom: 0;
-    @include type-M;
+  margin-top: 0;
+  margin-bottom: 0;
+  @include type-M;
 }
 
 a {
-    color: $black;
-    text-decoration: none;
-    border-bottom: 1px dotted $black;
+  color: $black;
+  text-decoration: none;
+  border-bottom: 1px dotted $black;
 }
