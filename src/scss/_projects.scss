@@ -1,70 +1,68 @@
 // Block alternation.
 
 .block-part-1 {
-    width: 100%;
+  width: 100%;
 
-    @media (min-width: $medium) {
-        width: $alternating-block-part;
-    }
+  @media (min-width: $medium) {
+    width: $alternating-block-part;
+  }
 }
 
 @mixin block-alternation {
-    @media (min-width: $medium) {
-
-        &:nth-child(odd) {
-            flex-direction: row;
-        }
-    
-        &:nth-child(even) {
-            flex-direction: row-reverse;
-        }
-    
-        .block-part-2 {
-            flex: 1;
-        }
+  @media (min-width: $medium) {
+    &:nth-child(odd) {
+      flex-direction: row;
     }
+
+    &:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .block-part-2 {
+      flex: 1;
+    }
+  }
 }
 
 .project-block {
-    margin-bottom: 5 * $margin; 
-    
-    .image-container {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 16 / 9;
-        background-size: cover;
-        background-position: 50%;
-        margin-bottom: $margin;
+  margin-bottom: 5 * $margin;
+
+  .image-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: 50%;
+    margin-bottom: $margin;
+  }
+
+  .project-head {
+    margin-bottom: 0.5 * $margin;
+    align-items: last baseline;
+  }
+
+  .project-title {
+    font-family: $header-font;
+  }
+
+  .see-project {
+    margin-bottom: 0;
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    & .see-project {
+      text-decoration: underline 1px dotted $black;
+      text-underline-offset: 2px;
     }
+  }
 
-    .project-head {
-        margin-bottom: 0.5 * $margin;
+  @media (min-width: $medium) {
+    & {
+      justify-content: space-between;
     }
+  }
 
-    .project-date {
-        margin-right: $margin;
-    }
-
-    .project-title {
-        font-family: $header-font;
-    }
-
-    &:hover {
-
-        cursor: pointer;
-
-        & .see-project{
-            text-decoration: underline 1px dotted $black;
-            text-underline-offset: 2px;
-        }
-    }
-
-    @media (min-width: $medium) {
-        & {
-            justify-content: space-between;
-        }
-    }
-
-    @include block-alternation()
-
+  @include block-alternation();
 }

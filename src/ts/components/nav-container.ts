@@ -1,4 +1,4 @@
-class navContainer extends DOMElement {
+class NavContainer extends DOMElement {
   constructor(parent: HTMLElement) {
     super("div", parent, ["nav-container", "flex"], "nav-container");
     this.children = this.appendChildren();
@@ -6,8 +6,8 @@ class navContainer extends DOMElement {
 
   private appendChildren(): children {
     let children: children = {
-      menuColumn: new MenuColumn(this.node, this)
-    }
+      menuColumn: new MenuColumn(this.node, this),
+    };
     return children;
   }
 }
