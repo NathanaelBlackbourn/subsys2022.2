@@ -6,7 +6,7 @@ let circles = {};
 function init() {
     getElements();
     setSizes();
-    animate();
+    // animate();
 }
 
 function getElements() {

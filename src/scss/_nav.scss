@@ -38,11 +38,9 @@ header {
 }
 
 #collapse-button {
-  position: sticky;
-  left: 100%;
-  margin-right: -50px;
-  margin-bottom: -40px;
-  bottom: -20px;
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
   display: none;
   height: 40px;
   width: 40px;
@@ -55,28 +53,28 @@ header {
 
   &.open-pos {
     display: block;
-    transform: translateY(calc(-100% - $margin)) rotate(-90deg);
+    transform: translateY(-5%) rotate(-90deg);
 
     &:hover {
-      transform: translateY(calc(-100% - $margin)) rotate(-90deg) scale(110%);
+      transform: translateY(-5%) rotate(-90deg) scale(110%);
     }
   }
 
   &.collapsed-pos {
     display: block;
-    transform: translateY(20%) rotate(90deg);
+    transform: translateY(107%) rotate(90deg);
 
     &:hover {
-      transform: translateY(20%) rotate(90deg) scale(110%);
+      transform: translateY(107%) rotate(90deg) scale(110%);
     }
   }
 
   @media (min-width: $medium) {
-    margin-left: -60px;
+    // margin-right: -60px;
   }
 
   @media (min-width: $large) {
-    margin-left: -70px;
+    // margin-right: -70px;
   }
 }
 

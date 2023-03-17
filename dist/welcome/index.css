@@ -44,14 +44,28 @@ div {
     height: var(--innerSize);
     left: calc(25% - var(--strk-width));
     transform: rotate(0deg);
+    transform-origin: bottom;
+    top: calc(-1 * var(--strk-width) / 2);
 }
 
 #inner1 {
-  transform-origin: bottom;
-  top: calc(-1 * var(--strk-width) / 2);
+  animation: 8s spinnyspin 1s linear infinite;
 }
 
 #inner2 {
-  transform-origin: top;
-  top: calc(50% - var(--strk-width) + calc(var(--strk-width) / 2));
+  animation: 6s spinnyspin 2s linear infinite;
+}
+
+#inner3 {
+  animation: 4s spinnyspin 3s linear infinite;
+}
+
+@keyframes spinnyspin{
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }

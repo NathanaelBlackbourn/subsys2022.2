@@ -1,0 +1,39 @@
+@media screen and (max-width: 480px) {
+
+    /* Main */
+
+    .annons-main {
+        margin-top: 40px;
+    }
+
+
+    /* Form */
+
+    fieldset {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+    }
+
+
+    /* List block */
+
+    .list-block {
+        gap: 1.5rem;
+     }
+     
+     .details {
+         font-size: 1rem;
+     }
+     
+     .date {
+         display: none;
+     } 
+     
+     .upper > .icon {
+         display: none;   
+     }
+     
+     .upper > p {
+         font-size: .8rem;
+     }
+}

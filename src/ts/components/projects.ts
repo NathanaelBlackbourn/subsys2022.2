@@ -9,7 +9,7 @@ class Projects extends DOMElement {
     this.renderContent();
   }
   renderContent() {
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 4; i++) {
       this.children["project" + i] = new ProjectBlock(i);
     }
   }
@@ -103,9 +103,7 @@ class ProjectBlock extends DOMElement {
   listener(i: number) {
     this.node.addEventListener("click", () => {
       const iframe = document.querySelector("iframe");
-      if (iframe) {
-        iframe.src = "./work/" + i + "/index.html";
-      }
+      if (iframe) iframe.src = "./work/" + i + "/index.html";
       mainframe.elements.nav.toggleHeader();
     });
   }

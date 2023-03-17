@@ -35,6 +35,19 @@
     background-position: 50%;
     margin-bottom: $margin;
   }
+  @supports not (aspect-ratio: 16/9) {
+    .image-container::before {
+      float: left;
+      padding-top: 56.25%;
+      content: "";
+    }
+
+    .image-container::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  }
 
   .project-head {
     margin-bottom: 0.5 * $margin;

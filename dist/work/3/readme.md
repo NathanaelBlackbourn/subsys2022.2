@@ -1,20 +1,64 @@
-HTML & CSS, Inlämning 1
-Återskapa en hemsida.
+#Craigslist 2.0
 
-Grupp: Edvin Djulic & Nathanael Blackbourn
-Sida: Göteborgs Konstmuseum, https://goteborgskonstmuseum.se/
+Vi har valt att modernisera craigslist (https://stockholm.craigslist.org), front-page och sidan där annonser listas. Vi valde den eftersom vi tycker den har en åldrad design och saknar responsivitet.
 
+Grupp: Nathanael Blackbourn och Leon Björklund
+-------------------------------------------------------------------------------------
 
-Avgränsningar
+PROBLEM:
 
-Sidan har mycket interaktivitet som inte ingår i uppgiftsbeskrivningen. Vi har utelämnat de interaktiva elementen som vi kan inte återskapa som t.ex nav-baren some försvinner när användaren skrullar och bild carousellerna. Vi  har också förenklat strukturen och tagit bort element som vi bedömer inte behöver finnas med för att återskapa hemsidans utseende.
+1. Sidan är för komplicerat med för mycket information på.
+2. Sidan är inte responsiv.
+3. Sidans utseende är utdaterad.
 
-Vi har inte kunnat återskapa originalets div-tagg ”#news-masonry” under h2-taggen ”Aktuellt” eftersom den används genom ett Javascript-bibliotek som heter ”Masonry”. ”Masonry” sorterar alla div-taggar inom sig på ett särskilt sätt när skärmen passerar vissa media breakpoints. På vår sida kommer artiklarna inte sorteras på samma sätt utan de hamnar i en annan ordning.
+LÖSNINGAR:
 
-Vi har inte använt samma fonter som i orginalet eftersom de kostar att använda. Istället har vi använt två fonter som är gratis; ”Gill Sans” och ”Spectral”. Detta gör att det blir en mindre skillnad i vissa avstånd på vår hemsida. Skillnaden märks på våran nav bar och på div klassen 'content' där vi fuck lägga till lite extra pixlar så att texten passar in. Texten wrappar ändå på fel ställe.
+1. Dölja odnödvändigt information med användning av ikoner och drop-down menyer.
+2. Använda media queries för att skapa tre olika versioner för desktop, tablet och mobil.
+3. Skapa an ren, modern utseende på sidan.
 
-Också på klassen 'content' har vi inte fått 'text-overflow' effekten att fungera som på originalen. Vi här lagt till punkterna manuellt i HTMLen.
+PLAN:
 
-Orginalets header har en div-tagg som heter "Burger" i denna finns tre i-taggar som utgör orginalets ikon i den högra hörnan. Vi har behållt div-taggen "Burger" men ersatt de tre i-taggarna med en ikon som är inlänkad och hämtad från "Fontawesome". Storleken på ikonen är stylad direkt i HTML-filen genom instruktionen från Fontawesome. Ikonen är inlänkad i head med taggen script istället för link, då det också var instruktionen från Fontawesome.
+1. Skissa upp mobil, tablet och laptop & desktop-design för vardera sida, 6 skisser totalt.
+2. Dela upp arbete (Nath orange, Leon blå)
+3. Välj media breakpoints, preliminära finns där nere.
+4. Skapa HTML-filer (finns nedan)
+5. Skapa CSS-filer (finns nedan)
+6. Jobba inom samma ramverk! Vilka maxbredder och vilka maxhöjder?
+7. Börja koda! 
 
-Vi har, förutom i Footern, inte använt oss av a-taggar för länkar utan bara lagt till samma hover-styling på relevanta div-taggar eller texter.
+Uppdelning av front-page: 
+
+Leon tar <main>
+Nath tar <sidebar> & <header>, <footer>
+
+Uppdelning av annonslisting-page:
+
+Leon tar .list-block
+Nath tar resten
+
+Media breakpoints: 
+
+Mobile: 0-480px
+Tablet: 481px-768px (front-page: side-bar går in i header eller footer)
+Laptop & Desktop: 769px above (max width 1200px)
+
+index.html:
+
+1. front-page.css (desktop/laptop, rot fil)
+2. front-page-tablet.css (tablet, <768px)
+3. front-page-mobile.css (mobil, <480px)
+
+annons-list.html CSS-filer:
+
+1. annons-list.css (desktop/laptop, rot fil)
+2. annons-list-tablet.css (tablet, <768px)
+3. annons-list-mobil.css (mobil, <480px)
+
+AVGRÄNSNINGAR
+
+1. Länkarna i footern har ändrats. Duplikata objekter har tagits bort och ordningen har ändrats för att göra den mer logisk.
+2. Den enda knappen som ska fungera är sök filtrering knappen vilken visar formulären på annons lista sidan. De andra har ibland hover och active egenskaper men ingen funktion.
+3. De enda länkar som ska fungera är länkan till 'bostad önskas' listan på front pagen och länken tillbaka till front pagen från lista sidan (vilken ligger vid toppen, ordet 'craigslist').
+
+--------- VI HAR MARKERAT DE FUNGERANDE LÄNKARNA MED * ---------

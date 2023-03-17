@@ -1,5 +1,4 @@
 {
-    "date": "09/2022",
-    "title": "WEBSITE RECREATION",
-    "description": "Response to a brief at Medieinstitutet. A text based game played by typing commands into an text input field. This was an exercise in vanilla JavaScript."
+  "title": "WEBSITE MODERNISATION",
+  "description": "An exercise in responsive web development at Medieinstitutet made in colaboration with Leon Björklund. A modernisation of the design and functionality of Craigslist."
 }

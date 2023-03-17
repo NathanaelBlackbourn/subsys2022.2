@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --black: #38322d;
+    --blue: #e3fffe;
+    --yellow: #f6ffba;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 15px;
+    line-height: 1.2;
+    color: var(--blue);
+    transition: all 0.3s ease;
+}
+
+body {
+    background-color: var(--black);
+}
+
+span {
+    color: var(--yellow);
+}
+
+
+/* Title */
+
+#title-container {
+    position: absolute;
+    left: 50%;
+    top: 4rem;
+    transform: translateX(-50%);
+}
+
+h1 {
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Frame for whole game */
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    min-height: 400px;
+    max-width: 600px;
+}
+
+
+/* Info block */
+
+#info-block {
+    height: 2rem;
+}
+
+.info-box {
+    position: absolute;
+    padding: 0.4rem;
+}
+
+#temp-box {
+    top: 0;
+    left: 0;
+}
+
+#day-box {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#food-box {
+    top: 0;
+    right: 0;
+}
+
+
+/* Main scene text */
+
+#text-container {
+    position: relative;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid var(--blue);
+    padding: 0.5rem;
+}
+
+#text-body {
+    flex: 1;
+    padding: 0 0.5rem 1rem 0.5rem;
+}
+
+
+/* Inventory/help buttons */
+
+#button-block {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* Inventory and help panels */
+
+.panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 0.5rem;
+    background-color: var(--black);
+}
+
+ul {
+    margin-top: 2rem;
+    list-style-type: none;
+    text-align: center;
+}
+
+#help-text {
+    margin-top: 20px;
+}
+
+.close-panel {
+    position: absolute;
+    bottom: 0.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+
+/* Toggleable hidden class for info panels */
+
+.hidden {
+    display: none;
+}
+
+
+/* Command panel */
+
+#command-block {
+    display: flex;
+}
+
+input {
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--blue);
+}
+
+input:focus {
+    outline: none;
+}
+
+button {
+    border: none;
+    padding: 0.5rem;
+    background-color: var(--black);
+    color: var(--blue);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--blue);
+    color: var(--black);
+}
+
+
+/* Team Panel */
+
+#team-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    bottom: 0;
+    left: -120px;
+}
+
+.team-icon {
+    height: 100px;
+    width: 100px;
+    border: 1px solid var(--blue);
+    border-radius: 50%;
+    text-align: center;
+    padding-top: calc(50% - 0.7rem);
+}
+
+.injured {
+    border-color: var(--yellow);
+    color: var(--yellow);
+}
+
+.injured-label {
+    color: var(--yellow);
+}

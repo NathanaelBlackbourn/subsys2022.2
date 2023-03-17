@@ -1,0 +1,45 @@
+@media screen and (max-width: 768px) {
+
+    /* Annons main */
+
+    .annons-main {
+        margin-top: 0;
+    }
+
+
+    /* Annons head */
+
+    .head-p {
+        margin-right: 20px;
+    }
+
+
+    /* Search block */
+
+    .search-block {
+        flex-direction: column;
+    }
+
+    .icon-block {
+        width: 100%;
+    }
+
+
+    /* Form */
+
+    fieldset {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto auto auto;
+    }
+
+
+    /* List items */
+
+    .date {
+        display: none;
+    } 
+    
+    .upper > .icon {
+        display: none;   
+    }
+}

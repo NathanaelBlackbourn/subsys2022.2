@@ -1,74 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="media-queries.css">
-    <script src="main.js"></script>
-    <script src="help-and-inventory.js"></script>
-    <script src="injuries.js"></script>
-    <script src="win-lose-restart.js"></script>
-    <script src="scene-objects/intro.js"></script>
-    <script src="scene-objects/global.js"></script>
-    <script src="scene-objects/bear-confronted-crevasses.js"></script>
-    <script src="scene-objects/bear-confronted-storm.js"></script>
-    <script src="scene-objects/crater-epicentre.js"></script>
-    <script src="scene-objects/crevasses.js"></script>
-    <script src="scene-objects/electrical-storm.js"></script>
-    <script src="scene-objects/enter-the-storm.js"></script>
-    <script src="scene-objects/find-pilot-1.js"></script>
-    <script src="scene-objects/find-pilot-2.js"></script>
-    <script src="scene-objects/food-thrown-crevasses.js"></script>
-    <script src="scene-objects/food-thrown-storm.js"></script>
-    <script src="scene-objects/mid-crater.js"></script>
-    <script src="scene-objects/over-crevasses.js"></script>
-    <script src="scene-objects/through-crevasses.js"></script>
-    <script src="scene-objects/wait-the-storm-out.js"></script>
-    <title>THE CRATER</title>
-</head>
-<body>
-    <div id="title-container">
-        <h1>THE CRATER</h1>
-    </div>
-    <main id="game-container">
-        <div id="info-block">
-            <div class="info-box" id="temp-box">-20°C</div>
-            <div class="info-box" id="day-box">Day 1</div>
-            <div class="info-box" id="food-box">10 days food</div>
-        </div>
-        <div id="text-container">
-            <div id="button-block">
-                <button id="help-button">help</button>
-                <button id="inventory-button">inventory</button>
-            </div>
-            <div id="text-body">
-                <p id="scene-text"></p>
-            </div>
-            <div id="command-block">
-                <input id="input" type="text" placeholder="Enter your course of action here">
-                <button id="execute-button">execute</button>
-            </div>
-            <div class="panel hidden" id="help-panel">
-                <h1>help</h1>
-                <p id="help-text">This game is played by entering commands into the box at the bottom and sending them. Available commands are shown to you in the text, they are <span>highlighted in yellow like this</span>. Enter the commands as you see them and they will be carried out by the game.<br><br>At any moment during any scene you can type <span>back</span> to return to the scene decription. Good luck.</p>
-                <button class="close-panel" id="close-help">close</button>
-            </div>
-            <div class="panel hidden" id="inventory-panel">
-                <h1>inventory</h1>
-                <ul id="inventory-list"></ul>
-                <button class="close-panel" id="close-inventory">close</button>
-            </div>
-            <div class="panel hidden" id="wrong-command">
-                <h1>command not recognised.</h1>
-            </div>
-        </div>
-        <aside id="team-container">
-            <div class="team-icon" id="team-1">nielsen<br><p class="injured-label hidden" id="injured-1">injured</p></div>
-            <div class="team-icon" id="team-2">kleist<br><p class="injured-label hidden" id="injured-2">injured</p></div>
-            <div class="team-icon" id="team-3">overgaard<br><p class="injured-label hidden" id="injured-3">injured</p></div>
-        </aside>
-    </main>
-</body>
+<html>
+  <head>
+    <style>
+      html,
+      body,
+      canvas {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        background: black;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Freckle+Face&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sansita:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/addons/p5.sound.js"></script>
+    <script src="build/bundle.js"></script>
+  </head>
+  <body>
+    <!-- Code injected via JavaScript -->
+  </body>
 </html>
