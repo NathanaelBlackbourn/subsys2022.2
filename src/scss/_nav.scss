@@ -12,20 +12,31 @@ header {
 
 .nav-container {
   flex-direction: column;
-  padding: $padding 0;
+  flex: 1;
   margin: 0 $neg-margin;
   width: calc($container-width + 2rem);
+  padding: 0 $padding;
 
   @media (min-width: $large) {
+    padding: $padding 0;
     flex-direction: row;
   }
 }
 
-.nav-column {
-  padding: 0 $padding;
+#menu-column {
+  position: sticky;
+  top: 0;
+  left: $margin;
+  width: 100%;
+  height: fit-content;
+  padding: $padding 0;
+  background: $blue;
+  z-index: 100;
 
-  @media (min-width: $large) {
-    width: 33.33%;
+  @media (min-width: $medium) {
+    top: $padding;
+    padding-top: 0;
+    width: 20%;
   }
 }
 

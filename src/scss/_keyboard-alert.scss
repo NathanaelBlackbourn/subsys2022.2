@@ -5,9 +5,9 @@
   left: 0;
   right: 0;
   background: $blue;
-  padding: 4.5rem 10%;
+  padding: 4.5rem 0;
 
-  p {
-    @include type-L;
+  .link {
+    z-index: 99;
   }
 }
