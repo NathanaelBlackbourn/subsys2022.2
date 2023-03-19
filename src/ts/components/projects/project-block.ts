@@ -1,20 +1,3 @@
-class Projects extends DOMElement {
-  constructor() {
-    super(
-      "div",
-      mainframe.elements.nav.children.navContainer.node,
-      ["nav-column", "content-column"],
-      "projects"
-    );
-    this.renderContent();
-  }
-  renderContent() {
-    for (let i = 1; i <= 4; i++) {
-      this.children["project" + i] = new ProjectBlock(i);
-    }
-  }
-}
-
 interface projectInfo {
   date: string;
   title: string;
@@ -23,30 +6,22 @@ interface projectInfo {
 
 /** The block of elements which forms each project's card */
 class ProjectBlock extends DOMElement {
-  projNum: number;
   blockName: string;
-  content!: projectInfo;
-  constructor(i: number) {
+  data: projectData;
+  constructor(project: projectData) {
     super(
       "div",
       document.getElementById("projects"),
       ["project-block", "flex"],
-      "project-" + i
+      project.title.split(" ").join("-") + "-block"
     );
-    this.projNum = i;
-    this.blockName = "project-" + i;
-    this.init(i);
+    this.data = project;
+    this.blockName = this.data.title.split(" ").join("-");
+    this.init();
   }
-  async init(i: number) {
-    this.content = await this.getContent(i);
+  async init() {
     this.appendChildren();
-    this.getImage(i);
-    this.listener(i);
-  }
-  async getContent(i: number) {
-    return await fetch("./work/" + i + "/project-info.json").then((response) =>
-      response.json()
-    );
+    this.listener();
   }
   appendChildren() {
     // Alternating block parts.
@@ -54,7 +29,7 @@ class ProjectBlock extends DOMElement {
       "div",
       this.node,
       ["block-part-1"],
-      this.blockName + "-part-1"
+      this.blockName + "-part1"
     );
     this.children.part2 = new DOMElement(
       "div",
@@ -73,7 +48,7 @@ class ProjectBlock extends DOMElement {
       this.children.head.node,
       ["project-title"],
       this.blockName + "-title",
-      this.content.title
+      this.data.title
     );
     this.children.seeProject = new DOMElement(
       "span",
@@ -86,25 +61,25 @@ class ProjectBlock extends DOMElement {
       "div",
       this.children.part1.node,
       ["image-container"],
-      this.blockName + "-image"
+      this.blockName + "-image",
+      undefined,
+      {style: `background-image: url(${this.data.image})`}
     );
     this.children.description = new DOMElement(
       "p",
       this.children.part1.node,
       ["project-description"],
       this.blockName + "-description",
-      this.content.description
+      this.data.description
     );
   }
-  getImage(i: number) {
-    this.children.imageContainer.node.style.backgroundImage =
-      "url(./work/" + i + "/thumbnail.png)";
-  }
-  listener(i: number) {
+  listener() {
     this.node.addEventListener("click", () => {
-      const iframe = document.querySelector("iframe");
-      if (iframe) iframe.src = "./work/" + i + "/index.html";
-      mainframe.elements.nav.toggleHeader();
+      if (this.data.openSesame) {
+        this.data.openSesame();
+      } else {
+        mainframe.openProject(this.data.url);
+      }
     });
   }
 }

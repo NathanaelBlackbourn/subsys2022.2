@@ -1,4 +1,4 @@
-/// <reference path="dom-element.ts"/>
+/// <reference path="../base-classes/dom-element.ts"/>
 
 class About extends DOMElement {
   content: AboutContent;
@@ -14,20 +14,17 @@ class About extends DOMElement {
   }
 
   private appendChildren() {
-    this.children.intro = new AboutIntro(
-      this.node,
-      this.content.introBlock
-    );
-    let skillKey: keyof SkillsBlocks
+    this.children.intro = new AboutIntro(this.node, this.content.introBlock);
+    let skillKey: keyof SkillsBlocks;
     for (skillKey in this.content.skillsBlocks) {
-      const block = this.content.skillsBlocks[skillKey]
+      const block = this.content.skillsBlocks[skillKey];
       this.children[block.title] = new AboutSkillsBlock(
         this.node,
         block.title.toLowerCase() + "-block",
         block
       );
     }
-    let expKey: keyof ExperienceBlocks
+    let expKey: keyof ExperienceBlocks;
     for (expKey in this.content.experienceBlocks) {
       const block = this.content.experienceBlocks[expKey];
       this.children[block.title] = new AboutExperienceBlock(
@@ -58,20 +55,19 @@ class AboutIntro extends DOMElement {
     this.appendChildren(content);
   }
   appendChildren(content: IntroBlock) {
-
     // Block containers
     this.children.nameBlock = new DOMElement(
       "div",
       this.node,
       ["about-block"],
       "name-block"
-    )
+    );
     this.children.captionBlock = new DOMElement(
       "div",
       this.node,
       ["about-block"],
       "caption-block"
-    )
+    );
 
     // Intro section text elements.
     this.children.name = new DOMElement(
@@ -104,4 +100,3 @@ class AboutIntro extends DOMElement {
     );
   }
 }
-

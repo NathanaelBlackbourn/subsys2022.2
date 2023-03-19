@@ -1,3 +1,5 @@
+/// <reference path="../base-classes/dom-element.ts" />
+
 class NavContainer extends DOMElement {
   constructor(parent: HTMLElement) {
     super("div", parent, ["nav-container", "flex"], "nav-container");

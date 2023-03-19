@@ -1,4 +1,0 @@
-{
-  "title": "FROSTBITE FRENZY",
-  "description": "A two player game built with Typescript and p5 using OOP. The players compete against each other in a maze to collect as many keys as possible in a limited time. Players must try to avoid the monsters navigating the maze randomly and can collect 'powerups' for advantages in gameplay. This project was carried out in collaboration with other students at Medieinstitutet."
-}

@@ -1,3 +1,5 @@
+/// <reference path="../base-classes/dom-element.ts" />
+
 class MenuColumn extends DOMElement {
   private parentNode: NavContainer;
   private activeColumn: string;
