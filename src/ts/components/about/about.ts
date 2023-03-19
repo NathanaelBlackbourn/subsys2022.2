@@ -68,6 +68,12 @@ class AboutIntro extends DOMElement {
       ["about-block"],
       "caption-block"
     );
+    this.children.linkBlock = new DOMElement(
+      "div",
+      this.node,
+      ["about-block"],
+      "link-block"
+    );
 
     // Intro section text elements.
     this.children.name = new DOMElement(
@@ -78,7 +84,7 @@ class AboutIntro extends DOMElement {
       content.name
     );
     this.children.text = new DOMElement(
-      "p",
+      "h1",
       this.children.captionBlock.node,
       [],
       "about-intro-text",

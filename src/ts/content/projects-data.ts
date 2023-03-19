@@ -36,39 +36,12 @@ const projectsData: projectData[] = [
         "alert-message",
         "This game requires a keyboard to play. "
       );
-      const clickContinue = new DOMElement(
-        "span",
-        alertMessage.node,
-        ["link"],
-        "click-continue"
-      );
-      const continueText = new DOMElement(
-        "span",
-        clickContinue.node,
-        [],
-        "",
-        "Continue"
-      );
-      const continueArrow = new DOMElement(
-        "div",
-        clickContinue.node,
-        [],
-        "",
-        arrowSVG
-      );
-      clickContinue.node.addEventListener(
-        "click",
-        (e) => {
-          mainframe.openProject("./work/frostbite-frenzy/index.html");
-          alertBox.removeMe();
-          e.stopPropagation();
-          block.addListener();
-        },
-        {
-          once: true,
-        }
-      );
-      // Cross to exit?
+      const clickContinue = new Link("span", alertBox.node, "Continue", (e) => {
+        mainframe.openProject("./work/frostbite-frenzy/index.html");
+        alertBox.removeMe();
+        e?.stopPropagation();
+        block.addListener();
+      });
     },
   },
   {

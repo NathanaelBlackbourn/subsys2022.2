@@ -41,25 +41,10 @@ class ProjectBlock extends DOMElement {
       this.blockName + "-title",
       this.data.title
     );
-    this.children.seeProject = new DOMElement(
+    this.children.seeProject = new Link(
       "p",
       this.children.part1.node,
-      ["see-project", "link"],
-      this.blockName + "-see"
-    );
-    this.children.seeProjectText = new DOMElement(
-      "span",
-      this.children.seeProject.node,
-      [],
-      "",
       "See project"
-    );
-    this.children.seeProjectArrows = new DOMElement(
-      "div",
-      this.children.seeProject.node,
-      [],
-      "",
-      arrowSVG
     );
     this.children.imageContainer = new DOMElement(
       "div",
@@ -77,6 +62,19 @@ class ProjectBlock extends DOMElement {
       this.data.description
     );
   }
+
+  sesameOpener() {
+    const handler = () => {
+      this.data.openSesame!(this);
+      this.node.removeEventListener("click", handler);
+    };
+    this.node.addEventListener("click", handler);
+  }
+
+  normalOpener() {
+    mainframe.openProject(this.data.url);
+  }
+
   public addListener() {
     if (this.data.openSesame) {
       const handler = () => {

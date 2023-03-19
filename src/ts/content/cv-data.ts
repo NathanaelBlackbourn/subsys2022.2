@@ -76,7 +76,7 @@ const CVData: AboutContent = {
   lang: "eng",
   introBlock: {
     name: "NATHANAEL<br>BACKBOURN",
-    introText: "I AM A FRONT END DEVELOPER<br>LIVING IN GOTHENBURG, SWEDEN",
+    introText: "FRONT END DEVELOPER LIVING IN GOTHENBURG, SWEDEN",
   },
   skillsBlocks: {
     languagesSection: {
