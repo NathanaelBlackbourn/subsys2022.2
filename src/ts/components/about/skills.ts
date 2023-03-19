@@ -26,13 +26,13 @@ class AboutSkillsBlock extends AboutContentBlock {
     this.children.part1 = new DOMElement(
       "div",
       this.node,
-      ["about-block-part"],
+      ["about-block-part-1"],
       content.title.split(" ").join("-") + "-part1"
     );
     this.children.part2 = new DOMElement(
       "div",
       this.node,
-      ["about-block-part", "about-block-part2"],
+      ["about-block-part-2"],
       content.title + "-part2"
     );
     this.children.title = new DOMElement(
@@ -47,7 +47,7 @@ class AboutSkillsBlock extends AboutContentBlock {
      * Rows
      */
     let i = 1;
-    let column: keyof SkillsContent;
+    let column: keyof SkillContent;
     for (column in content.content) {
       this.children["row" + i] = new DOMElement(
         "div",

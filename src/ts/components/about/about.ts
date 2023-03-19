@@ -15,6 +15,7 @@ class About extends DOMElement {
 
   private appendChildren() {
     this.children.intro = new AboutIntro(this.node, this.content.introBlock);
+    this.children.pitchBlock = new PitchBlock(this.content, this.node);
     let skillKey: keyof SkillsBlocks;
     for (skillKey in this.content.skillsBlocks) {
       const block = this.content.skillsBlocks[skillKey];
@@ -45,70 +46,5 @@ interface CVIntroContent {
 class AboutContentBlock extends DOMElement {
   constructor(parent: HTMLElement, id: string) {
     super("div", parent, ["about-block"], id);
-  }
-}
-
-// Intro section at top of about
-class AboutIntro extends DOMElement {
-  constructor(parent: HTMLElement, content: IntroBlock) {
-    super("div", parent, ["about-block"], "cv-intro");
-    this.appendChildren(content);
-    this.addListeners();
-  }
-  appendChildren(content: IntroBlock) {
-    // Block containers
-    this.children.nameBlock = new DOMElement(
-      "div",
-      this.node,
-      ["about-block-part"],
-      "name-block"
-    );
-    this.children.captionBlock = new DOMElement(
-      "div",
-      this.node,
-      ["about-block-part"],
-      "caption-block"
-    );
-    this.children.linkBlock = new DOMElement(
-      "div",
-      this.node,
-      ["about-block-part"],
-      "link-block"
-    );
-
-    // Intro section text elements.
-    this.children.name = new DOMElement(
-      "h1",
-      this.children.nameBlock.node,
-      [],
-      "about-intro-name",
-      content.name
-    );
-    this.children.text = new DOMElement(
-      "h1",
-      this.children.captionBlock.node,
-      [],
-      "about-intro-text",
-      content.introText
-    );
-    this.children.text = new DOMElement(
-      "h2",
-      this.children.linkBlock.node,
-      [],
-      "",
-      "nathanaelblackbourn@gmail.com"
-    );
-    this.children.github = new Link(
-      "p",
-      this.children.linkBlock.node,
-      "See my github",
-      "github-link"
-    );
-  }
-
-  private addListeners() {
-    this.children.github.node.addEventListener("click", () => {
-      window.open("https://github.com/nathanaelblackbourn", "_blank");
-    });
   }
 }

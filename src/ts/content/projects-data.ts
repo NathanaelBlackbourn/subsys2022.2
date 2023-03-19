@@ -36,12 +36,18 @@ const projectsData: projectData[] = [
         "alert-message",
         "This game requires a keyboard to play. "
       );
-      const clickContinue = new Link("span", alertBox.node, "Continue", (e) => {
-        mainframe.openProject("./work/frostbite-frenzy/index.html");
-        alertBox.removeMe();
-        e?.stopPropagation();
-        block.addListener();
-      });
+      const clickContinue = new Link(
+        "span",
+        alertBox.node,
+        "Continue",
+        "",
+        (e) => {
+          mainframe.openProject("./work/frostbite-frenzy/index.html");
+          alertBox.removeMe();
+          e?.stopPropagation();
+          block.addListener();
+        }
+      );
     },
   },
   {

@@ -8,9 +8,7 @@
   .block-part-1 {
     width: 100%;
     z-index: 50;
-    @media (min-width: $medium) {
-      position: absolute;
-    }
+    margin-bottom: 2 * $margin;
 
     h1 {
       display: inline-block;
@@ -18,8 +16,12 @@
       padding: 0 3px;
     }
 
-    p {
-      @include type-L;
+    @media (min-width: $medium) {
+      position: absolute;
+
+      .link {
+        margin-top: 3 * $margin;
+      }
     }
   }
 

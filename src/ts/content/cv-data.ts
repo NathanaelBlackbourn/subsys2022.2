@@ -1,6 +1,13 @@
 interface AboutContent {
   lang: string;
-  introBlock: IntroBlock;
+  introBlock: {
+    name: string;
+    introText: string;
+  };
+  pitchBlock: {
+    title: string;
+    pitch: string;
+  };
   skillsBlocks: SkillsBlocks;
   experienceBlocks: ExperienceBlocks;
 }
@@ -17,40 +24,20 @@ interface SkillsBlocks {
 
 interface SkillsSection {
   title: string;
-  content: LangContent | SkillContent;
-}
-
-interface LangContent {
-  row1: LangRow;
-}
-
-interface LangRow {
-  lang1: Language;
-  lang2: Language;
-  lang3: Language;
+  content: SkillContent;
 }
 
 interface SkillContent {
-  row1: SkillRow;
-  row2: SkillRow;
-  row3: SkillRow;
-  row4: SkillRow;
+  [key: string]: SkillColumn;
 }
 
-interface SkillRow {
-  skillBlock1: Skill;
-  skillBlock2: Skill;
-  skillBlock3?: Skill;
-}
-
-interface Language {
-  skill: string;
-  level: string;
+interface SkillColumn {
+  [key: string]: Skill;
 }
 
 interface Skill {
   skill: string;
-  level: number;
+  level: number | string;
 }
 
 interface ExperienceBlocks {
@@ -77,6 +64,11 @@ const CVData: AboutContent = {
   introBlock: {
     name: "NATHANAEL<br>BACKBOURN",
     introText: "FRONT END DEVELOPER LIVING IN GOTHENBURG, SWEDEN",
+  },
+  pitchBlock: {
+    title: "I AM",
+    pitch:
+      "A visually oriented person who likes to think systematically, to build and to collaborate. I work rigorously and holistically. I'm from Britain and have lived in Sweden since 2020.",
   },
   skillsBlocks: {
     languagesSection: {
