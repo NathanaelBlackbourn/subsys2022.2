@@ -29,21 +29,27 @@ const projectsData: projectData[] = [
         [],
         "alert-box"
       );
-      const alertMessage = new ContentElement(
+      const alertMessage = new DOMElement(
         "p",
         alertBox.node,
         [],
         "alert-message",
-        "This game requires a keyboard to play."
+        "This game requires a keyboard to play. "
       );
-      const clickContinue = new ContentElement(
+      const clickContinue = new DOMElement(
         "span",
         alertMessage.node,
+        ["link"],
+        "click-continue"
+      );
+      const continueText = new DOMElement(
+        "span",
+        clickContinue.node,
         [],
         "",
         "Continue"
       );
-      const continueArrow = new ContentElement(
+      const continueArrow = new DOMElement(
         "div",
         clickContinue.node,
         [],
@@ -52,10 +58,11 @@ const projectsData: projectData[] = [
       );
       clickContinue.node.addEventListener(
         "click",
-        () => {
+        (e) => {
           mainframe.openProject("./work/frostbite-frenzy/index.html");
           alertBox.removeMe();
-          setTimeout(block.addListener.bind(block), 5);
+          e.stopPropagation();
+          block.addListener();
         },
         {
           once: true,

@@ -1,0 +1,31 @@
+.link {
+  position: relative;
+  display: flex;
+  margin-top: $body-height;
+
+  span {
+    border-bottom: 1px solid black;
+    padding-right: 0;
+    transition: padding-right 300ms ease;
+  }
+
+  div {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    height: $body-height;
+    width: $body-height;
+    svg {
+      polyline {
+        fill: none;
+        stroke: $black;
+        stroke-width: 5px;
+      }
+    }
+  }
+  &:hover {
+    span {
+      padding-right: 0.5rem;
+    }
+  }
+}

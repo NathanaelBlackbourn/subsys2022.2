@@ -58,9 +58,3 @@ p {
   margin-bottom: 0;
   @include type-M;
 }
-
-a {
-  color: $black;
-  text-decoration: none;
-  border-bottom: 1px dotted $black;
-}

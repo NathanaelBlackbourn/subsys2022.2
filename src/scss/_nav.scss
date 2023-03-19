@@ -6,11 +6,7 @@ header {
   transition: transform 500ms ease;
 
   @media (min-width: $medium) {
-    padding: 0 (5 * $padding);
-  }
-
-  @media (min-width: $large) {
-    padding: 0 (6 * $padding);
+    padding: 0 (2 * $padding);
   }
 }
 
@@ -35,71 +31,4 @@ header {
 
 .collapsed {
   transform: translateY(-100%);
-}
-
-#collapse-button {
-  position: absolute;
-  right: 1rem;
-  bottom: 0;
-  display: none;
-  height: 40px;
-  width: 40px;
-  cursor: pointer;
-
-  transition-property: transform scale;
-  transition-duration: 200ms;
-  transition-delay: 200ms;
-  transition-timing-function: ease;
-
-  &.open-pos {
-    display: block;
-    transform: translateY(-5%) rotate(-90deg);
-
-    &:hover {
-      transform: translateY(-5%) rotate(-90deg) scale(110%);
-    }
-  }
-
-  &.collapsed-pos {
-    display: block;
-    transform: translateY(107%) rotate(90deg);
-
-    &:hover {
-      transform: translateY(107%) rotate(90deg) scale(110%);
-    }
-  }
-
-  @media (min-width: $medium) {
-    // margin-right: -60px;
-  }
-
-  @media (min-width: $large) {
-    // margin-right: -70px;
-  }
-}
-
-.collapsed {
-  transform: translateY(-100%);
-}
-
-@mixin svg-stroke {
-  stroke: $black;
-  stroke-width: 3px;
-  stroke-dasharray: 4 4;
-}
-
-#collapse-button-svg {
-  width: 95%;
-  height: 95%;
-
-  .st0 {
-    fill: $blue;
-    stroke: none;
-  }
-
-  .st1 {
-    fill: transparent;
-    stroke: $black;
-    stroke-width: 2px;
-  }
 }

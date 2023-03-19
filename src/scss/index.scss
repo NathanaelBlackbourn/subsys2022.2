@@ -1,29 +1,38 @@
 // Variables
-@import 'variables';
+@import "variables";
 
 // Rules for typography
-@import 'typography';
+@import "typography";
 
 // User agent styles reset
-@import 'base';
+@import "base";
 
 // Small classes used to apply or toggle certain rules.
-@import 'reusable';
+@import "reusable";
+
+// Link component.
+@import "link";
 
 // Structure of main header elements
-@import 'nav';
+@import "nav";
+
+// Button for toggling the header
+@import "collapse-button";
 
 // Rules controlling menu button interactivity
-@import 'menu-button';
+@import "menu-button";
 
 // The 'column' containing about/projects
-@import 'content-column';
+@import "content-column";
 
 // Portoflio of projects from school
-@import 'projects';
+@import "projects";
+
+// Alert clicking Frostbite Frenzy about need for keyboard
+@import "keyboard-alert";
 
 // CV section
-@import 'about';
+@import "about";
 
 // Elements present only at landing
-@import 'welcome';
+@import "welcome";

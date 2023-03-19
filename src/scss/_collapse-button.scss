@@ -1,0 +1,45 @@
+#collapse-button {
+  position: absolute;
+  right: 1rem;
+  bottom: 0;
+  display: none;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+
+  transition-property: transform scale;
+  transition-duration: 200ms;
+  transition-delay: 200ms;
+  transition-timing-function: ease;
+
+  svg {
+    g {
+      circle {
+        fill: $blue;
+      }
+    }
+    polyline {
+      fill: none;
+      stroke: $black;
+      stroke-width: 2px;
+    }
+  }
+
+  &.open-pos {
+    display: block;
+    transform: translateY(-5%) rotate(-90deg);
+
+    &:hover {
+      transform: translateY(-5%) rotate(-90deg) scale(110%);
+    }
+  }
+
+  &.collapsed-pos {
+    display: block;
+    transform: translateY(107%) rotate(90deg);
+
+    &:hover {
+      transform: translateY(107%) rotate(90deg) scale(110%);
+    }
+  }
+}

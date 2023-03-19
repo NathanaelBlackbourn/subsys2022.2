@@ -12,7 +12,7 @@ class ProjectBlock extends DOMElement {
     super(
       "div",
       document.getElementById("projects"),
-      ["project-block", "flex"],
+      ["project-block"],
       project.title.split(" ").join("-") + "-block"
     );
     this.data = project;
@@ -31,32 +31,39 @@ class ProjectBlock extends DOMElement {
     this.children.part2 = new DOMElement(
       "div",
       this.node,
-      ["block-oart-2"],
+      ["block-part-2"],
       this.blockName + "-part-2"
     );
-    this.children.head = new DOMElement(
-      "div",
-      this.children.part1.node,
-      ["project-head", "flex", "space-between"],
-      this.blockName + "-head"
-    );
     this.children.title = new DOMElement(
-      "span",
-      this.children.head.node,
+      "h1",
+      this.children.part1.node,
       ["project-title"],
       this.blockName + "-title",
       this.data.title
     );
     this.children.seeProject = new DOMElement(
+      "p",
+      this.children.part1.node,
+      ["see-project", "link"],
+      this.blockName + "-see"
+    );
+    this.children.seeProjectText = new DOMElement(
       "span",
-      this.children.head.node,
-      ["see-project"],
-      this.blockName + "-see",
-      "see project"
+      this.children.seeProject.node,
+      [],
+      "",
+      "See project"
+    );
+    this.children.seeProjectArrows = new DOMElement(
+      "div",
+      this.children.seeProject.node,
+      [],
+      "",
+      arrowSVG
     );
     this.children.imageContainer = new DOMElement(
       "div",
-      this.children.part1.node,
+      this.children.part2.node,
       ["image-container"],
       this.blockName + "-image",
       undefined,
@@ -64,7 +71,7 @@ class ProjectBlock extends DOMElement {
     );
     this.children.description = new DOMElement(
       "p",
-      this.children.part1.node,
+      this.children.part2.node,
       ["project-description"],
       this.blockName + "-description",
       this.data.description

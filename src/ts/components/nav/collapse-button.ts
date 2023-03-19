@@ -2,6 +2,6 @@
 
 class CollapseButton extends DOMElement {
   constructor(parent: HTMLElement) {
-    super("div", parent, ["unopened"], "collapse-button", arrowSVG);
+    super("div", parent, ["unopened"], "collapse-button", circleArrowSVG);
   }
 }

@@ -1,31 +1,35 @@
-// Block alternation.
-
-.block-part-1 {
-  width: 100%;
-
-  @media (min-width: $medium) {
-    width: $alternating-block-part;
-  }
-}
-
-@mixin block-alternation {
-  @media (min-width: $medium) {
-    &:nth-child(odd) {
-      flex-direction: row;
-    }
-
-    &:nth-child(even) {
-      flex-direction: row-reverse;
-    }
-
-    .block-part-2 {
-      flex: 1;
-    }
-  }
-}
-
 .project-block {
+  // Variables
+  $part2-width: 70%;
+
   margin-bottom: 5 * $margin;
+  position: relative;
+
+  .block-part-1 {
+    width: 100%;
+    z-index: 50;
+    @media (min-width: $medium) {
+      position: absolute;
+    }
+
+    h1 {
+      display: inline-block;
+      background: $blue;
+      padding: 0 3px;
+    }
+
+    p {
+      @include type-L;
+    }
+  }
+
+  .block-part-2 {
+    margin-right: 0;
+    margin-left: auto;
+    @media (min-width: $medium) {
+      width: $part2-width;
+    }
+  }
 
   .image-container {
     position: relative;
@@ -49,25 +53,13 @@
     }
   }
 
-  .project-head {
-    margin-bottom: 0.5 * $margin;
-    align-items: last baseline;
-  }
-
-  .project-title {
-    font-family: $header-font;
-  }
-
-  .see-project {
-    margin-bottom: 0;
-  }
-
   &:hover {
     cursor: pointer;
 
-    & .see-project {
-      text-decoration: underline 1px dotted $black;
-      text-underline-offset: 2px;
+    .link {
+      span {
+        padding-right: 0.5rem;
+      }
     }
   }
 
@@ -76,6 +68,4 @@
       justify-content: space-between;
     }
   }
-
-  @include block-alternation();
 }
