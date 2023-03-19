@@ -76,7 +76,7 @@ class ProjectBlock extends DOMElement {
   listener() {
     this.node.addEventListener("click", () => {
       if (this.data.openSesame) {
-        this.data.openSesame();
+        this.data.openSesame(this.children.imageContainer, this.node);
       } else {
         mainframe.openProject(this.data.url);
       }
