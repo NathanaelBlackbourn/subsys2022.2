@@ -3,9 +3,10 @@ class Link extends DOMElement {
     type: string,
     parent: HTMLElement,
     text: string,
-    listener?: (e?: MouseEvent) => void
+    id?: string | undefined,
+    listener?: (arg?: any) => any
   ) {
-    super(type, parent, ["link"], "");
+    super(type, parent, ["link"], id ? id : "");
     this.appendChildren(text);
     if (listener) this.addListener(listener);
   }

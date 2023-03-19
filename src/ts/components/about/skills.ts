@@ -23,15 +23,21 @@ class AboutSkillsBlock extends AboutContentBlock {
     /**
      * Skills blocks
      */
-    this.children.head = new DOMElement(
+    this.children.part1 = new DOMElement(
       "div",
       this.node,
-      ["skills-head", "flex"],
-      content.title + "-head"
+      ["about-block-part"],
+      content.title.split(" ").join("-") + "-part1"
+    );
+    this.children.part2 = new DOMElement(
+      "div",
+      this.node,
+      ["about-block-part", "about-block-part2"],
+      content.title + "-part2"
     );
     this.children.title = new DOMElement(
-      "h2",
-      this.children.head.node,
+      "h1",
+      this.children.part1.node,
       ["about-block-title"],
       content.title + "-title",
       content.title
@@ -41,22 +47,22 @@ class AboutSkillsBlock extends AboutContentBlock {
      * Rows
      */
     let i = 1;
-    let row: keyof SkillsContent;
-    for (row in content.content) {
+    let column: keyof SkillsContent;
+    for (column in content.content) {
       this.children["row" + i] = new DOMElement(
         "div",
-        this.node,
-        ["skill-row", "flex", "space-between"],
-        content.title + "-row-" + i
+        this.children.part2.node,
+        ["skill-column", "flex"],
+        content.title.split(" ").join("-") + "-column-" + i
       );
 
       /**
        * Items on rows
        */
-      for (const item in content.content[row]) {
-        const skillBlock = content.content[row][item];
+      for (const item in content.content[column]) {
+        const skillBlock = content.content[column][item];
         this.children[skillBlock.skill] = new DOMElement(
-          "h3",
+          "h2",
           this.children["row" + i].node,
           ["skill-element", "about-h3"],
           skillBlock.skill + "-element",

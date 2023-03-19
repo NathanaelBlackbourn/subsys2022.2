@@ -137,7 +137,7 @@ const CVData: AboutContent = {
         },
         row4: {
           skillBlock1: {
-            skill: "Adobe Creative Suite",
+            skill: "Adobe",
             level: 50,
           },
           skillBlock2: {
@@ -150,7 +150,7 @@ const CVData: AboutContent = {
   },
   experienceBlocks: {
     educationBlock: {
-      title: "EDUCATION",
+      title: "MY STUDIES",
       content: [
         {
           organisation: "Medieinstitutet",

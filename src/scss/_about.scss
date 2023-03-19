@@ -1,35 +1,56 @@
 #cv-intro {
-    width: 100%;
-    margin-bottom: calc(2 * $margin);
-    flex-wrap: wrap;
-    @media (max-width: $medium) {
-        padding-bottom: 2rem;
-    }
+  width: 100%;
+  margin-bottom: calc(2 * $margin);
+  flex-wrap: wrap;
+  @media (max-width: $medium) {
+    padding-bottom: 2rem;
+  }
 }
 
 .about-block {
-    width: 100%;
-    margin-bottom: calc(3 * $margin);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: calc(3 * $margin);
 
-    @media (min-width: $medium) {
-        width: $horizontal-block-part;
+  .about-block-part {
+    width: 100%;
+  }
+
+  .about-block-part2 {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  @media (min-width: $medium) {
+    flex-direction: row;
+
+    .about-block-part {
+      width: 50%;
     }
+  }
 }
 
 .about-block-title {
-    width: 100%;
-    margin-bottom: (3 * $margin);
+  width: 100%;
+  margin-bottom: (3 * $margin);
 }
 
 .about-h3 {
-    margin-bottom: $margin;
+  margin-bottom: $margin;
 }
 
 .skills-head {
-    justify-content: center;
+  justify-content: center;
+}
+
+.skill-column {
+  flex-direction: column;
+  width: 30%;
 }
 
 .experience-section {
-    flex-wrap: wrap;
-    margin-top: $margin;   
+  flex-wrap: wrap;
+  margin-top: $margin;
 }

@@ -51,27 +51,28 @@ class AboutContentBlock extends DOMElement {
 // Intro section at top of about
 class AboutIntro extends DOMElement {
   constructor(parent: HTMLElement, content: IntroBlock) {
-    super("div", parent, ["space-between"], "cv-intro");
+    super("div", parent, ["about-block"], "cv-intro");
     this.appendChildren(content);
+    this.addListeners();
   }
   appendChildren(content: IntroBlock) {
     // Block containers
     this.children.nameBlock = new DOMElement(
       "div",
       this.node,
-      ["about-block"],
+      ["about-block-part"],
       "name-block"
     );
     this.children.captionBlock = new DOMElement(
       "div",
       this.node,
-      ["about-block"],
+      ["about-block-part"],
       "caption-block"
     );
     this.children.linkBlock = new DOMElement(
       "div",
       this.node,
-      ["about-block"],
+      ["about-block-part"],
       "link-block"
     );
 
@@ -91,18 +92,23 @@ class AboutIntro extends DOMElement {
       content.introText
     );
     this.children.text = new DOMElement(
-      "p",
-      this.children.captionBlock.node,
+      "h2",
+      this.children.linkBlock.node,
       [],
       "",
       "nathanaelblackbourn@gmail.com"
     );
-    this.children.text = new DOMElement(
+    this.children.github = new Link(
       "p",
-      this.children.captionBlock.node,
-      [],
-      "",
-      '<a target="blank" href="https://github.com/nathanaelblackbourn">see my github</a>'
+      this.children.linkBlock.node,
+      "See my github",
+      "github-link"
     );
+  }
+
+  private addListeners() {
+    this.children.github.node.addEventListener("click", () => {
+      window.open("https://github.com/nathanaelblackbourn", "_blank");
+    });
   }
 }
