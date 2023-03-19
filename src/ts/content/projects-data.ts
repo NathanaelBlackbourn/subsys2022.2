@@ -3,8 +3,8 @@ interface projectData {
   description: string;
   image: string;
   url: string;
-  openSesame?: (imageFrame: DOMElement, parentBlock: HTMLElement) => void;
-  clickListener?: () => void;
+  openSesame?: (block: ProjectBlock) => void;
+  replaceListener?: (block: ProjectBlock) => void;
 }
 
 const projectsData: projectData[] = [
@@ -21,10 +21,14 @@ const projectsData: projectData[] = [
       "A two player game built with Typescript and p5 using OOP. The players compete against each other in a maze to collect as many keys as possible in a limited time. Players must try to avoid the monsters navigating the maze randomly and can collect 'powerups' for advantages in gameplay. This project was carried out in collaboration with other students at Medieinstitutet.",
     image: "./work/frostbite-frenzy/thumbnail.png",
     url: "./work/frostbite-frenzy/index.html",
-    openSesame(imageFrame: DOMElement, parentBlock: HTMLElement) {
-      parentBlock.removeEventListener("click", () => {});
+    openSesame(block: ProjectBlock) {
       // Show text "This game requires a keyboard to play. Link continue." Over image element?
-      const alertBox = new DOMElement("div", imageFrame.node, [], "alert-box");
+      const alertBox = new DOMElement(
+        "div",
+        block.children.imageContainer.node,
+        [],
+        "alert-box"
+      );
       const alertMessage = new ContentElement(
         "p",
         alertBox.node,
@@ -49,17 +53,14 @@ const projectsData: projectData[] = [
       clickContinue.node.addEventListener(
         "click",
         () => {
-          // parentBlock.addEventListener("click", () => {
-          //   this.openSesame!(imageFrame, parentBlock);
-          // });
           mainframe.openProject("./work/frostbite-frenzy/index.html");
           alertBox.removeMe();
+          setTimeout(block.addListener.bind(block), 5);
         },
         {
           once: true,
         }
       );
-      // Remove block event listener.
       // Cross to exit?
     },
   },

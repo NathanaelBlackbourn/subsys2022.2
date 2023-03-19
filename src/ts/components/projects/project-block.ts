@@ -17,11 +17,8 @@ class ProjectBlock extends DOMElement {
     );
     this.data = project;
     this.blockName = this.data.title.split(" ").join("-");
-    this.init();
-  }
-  async init() {
     this.appendChildren();
-    this.listener();
+    this.addListener();
   }
   appendChildren() {
     // Alternating block parts.
@@ -73,13 +70,17 @@ class ProjectBlock extends DOMElement {
       this.data.description
     );
   }
-  listener() {
-    this.node.addEventListener("click", () => {
-      if (this.data.openSesame) {
-        this.data.openSesame(this.children.imageContainer, this.node);
-      } else {
+  public addListener() {
+    if (this.data.openSesame) {
+      const handler = () => {
+        this.data.openSesame!(this);
+        this.node.removeEventListener("click", handler);
+      };
+      this.node.addEventListener("click", handler);
+    } else {
+      this.node.addEventListener("click", () => {
         mainframe.openProject(this.data.url);
-      }
-    });
+      });
+    }
   }
 }
