@@ -56,8 +56,7 @@ class MenuColumn extends DOMElement {
               ?.classList.add("section-open");
             break;
           case "about":
-            const aboutContent = await this.getAboutContent();
-            this.parentNode.children.about = new About(aboutContent);
+            this.parentNode.children.about = new About();
             document
               .getElementById("about-button")
               ?.classList.add("section-open");
@@ -68,9 +67,5 @@ class MenuColumn extends DOMElement {
         this.activeColumn = target;
         break;
     }
-  }
-
-  private async getAboutContent(): Promise<AboutContent> {
-    return fetch("./cv/content.json").then((response) => response.json());
   }
 }

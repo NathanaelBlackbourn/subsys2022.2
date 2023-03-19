@@ -2,14 +2,14 @@
 
 class About extends DOMElement {
   content: AboutContent;
-  constructor(aboutContent: AboutContent) {
+  constructor() {
     super(
       "div",
       mainframe.elements.nav.children.navContainer.node,
       ["nav-column", "content-column", "flex"],
       "about"
     );
-    this.content = aboutContent;
+    this.content = CVData;
     this.appendChildren();
   }
 
