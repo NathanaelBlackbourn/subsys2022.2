@@ -33,7 +33,7 @@ header {
   background: $blue;
   z-index: 100;
 
-  @media (min-width: $medium) {
+  @media (min-width: $large) {
     top: $padding;
     padding-top: 0;
     width: 20%;

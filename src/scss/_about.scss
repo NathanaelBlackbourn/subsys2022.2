@@ -38,9 +38,13 @@
 
   .experience-sub-block {
     margin-bottom: 5 * $margin;
+    width: 100%;
+
+    & > * {
+      max-width: 25rem;
+    }
 
     .experience-date-block {
-      max-width: 25rem;
       margin: $margin 0;
 
       .to {

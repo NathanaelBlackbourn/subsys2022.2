@@ -20,29 +20,38 @@ const projectsData: projectData[] = [
     description:
       "A two player game built with Typescript and p5 using OOP. The players compete against each other in a maze to collect as many keys as possible in a limited time. Players must try to avoid the monsters navigating the maze randomly and can collect 'powerups' for advantages in gameplay. This project was carried out in collaboration with other students at Medieinstitutet.",
     image: "./work/frostbite-frenzy/thumbnail.png",
+    // url: "https://main--stellular-brioche-80ac61.netlify.app",
     url: "./work/frostbite-frenzy/index.html",
     openSesame(block: ProjectBlock) {
-      // Show text "This game requires a keyboard to play. Link continue." Over image element?
       const alertBox = new DOMElement(
         "div",
         block.children.imageContainer.node,
         [],
         "alert-box"
       );
+
       const alertMessage = new DOMElement(
         "p",
         alertBox.node,
         [],
         "alert-message",
-        "This game requires a keyboard to play. "
+        "This game requires a keyboard to play. Clicking continue below will take you to the external site where the game is hosted."
       );
+
       const clickContinue = new Link(
         "span",
         alertBox.node,
         "Continue",
         "",
         (e) => {
-          mainframe.openProject("./work/frostbite-frenzy/index.html");
+          window.open(
+            "https://main--stellular-brioche-80ac61.netlify.app",
+            "_blank"
+          );
+          // mainframe.openProject(
+          // "https://main--stellular-brioche-80ac61.netlify.app"
+          // "./work/frostbite-frenzy/index.html"
+          // );
           alertBox.removeMe();
           e?.stopPropagation();
           block.addListener();
